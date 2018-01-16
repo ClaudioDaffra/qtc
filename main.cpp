@@ -10,9 +10,14 @@ extern "C"
 
 int main(int argc, char *argv[])
 {
+	// TODO solo quando uso le interfacce non esce bene
+	
     QApplication app(argc, argv);
 
     picoc_main ( argc, argv );
 
-    return app.exec();
+    app.exec();
+	
+
+	return 0 ;
 }

@@ -16,34 +16,35 @@
 #include <vector>
 #include "../interpreter.h"
 
-
-
 // ********** 
 // functions
 // ********** 
- 
-void qwWidgetNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+
+// ...................................................................................................................... NEW
+
+void qWindowNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
     QWidget *p  = new QWidget();
     ReturnValue->Val->Pointer =  (void*) p  ;
 }
 
-void qwPushButtonNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qPushButtonNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;	
     QPushButton *p  = new QPushButton( w0 );
     ReturnValue->Val->Pointer =  (void*) p  ;
 }
 
-void qwLabelNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qLabelNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
     QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;
     QLabel *p  = new QLabel( w0 );
     ReturnValue->Val->Pointer =  (void*) p  ;
 }
 
+// ...................................................................................................................... (WIDGET) SHOW RESIZE MOVE
 
-void qwShow(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qWidgetShow(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;
 
@@ -51,16 +52,9 @@ void qwShow(struct ParseState *Parser, struct Value *ReturnValue, struct Value *
 
 	ReturnValue->Val->Pointer =  NULL  ;
 }
-void qwWindowSetTitle(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
-{
-	QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;
-    QString *pstr = (QString*) Param[1]->Val->Pointer  ;
 
-	(*w0).setWindowTitle( *pstr );
 
-	ReturnValue->Val->Pointer =  NULL  ;
-}
-void qwResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qWidgetResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;	
 	int width  = (int) Param[1]->Val->Integer  ;
@@ -71,7 +65,7 @@ void qwResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value
 	ReturnValue->Val->Pointer =  NULL  ;
 }
 
-void qwMove(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qWidgetMove(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;	
 	int x  = (int) Param[1]->Val->Integer  ;
@@ -82,7 +76,22 @@ void qwMove(struct ParseState *Parser, struct Value *ReturnValue, struct Value *
 	ReturnValue->Val->Pointer =  NULL  ;
 }
 
-void qwPushButtonSetText(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+// ...................................................................................................................... Set Title
+
+
+void qWindowSetTitle(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	QWidget *w0 = (QWidget*) Param[0]->Val->Pointer  ;
+    QString *pstr = (QString*) Param[1]->Val->Pointer  ;
+
+	(*w0).setWindowTitle( *pstr );
+
+	ReturnValue->Val->Pointer =  NULL  ;
+}
+
+// ...................................................................................................................... Set Text
+
+void qPushButtonSetText(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QPushButton *w0 = (QPushButton*) Param[0]->Val->Pointer  ;	
     QString *pstr = (QString*) Param[1]->Val->Pointer  ;
@@ -92,7 +101,20 @@ void qwPushButtonSetText(struct ParseState *Parser, struct Value *ReturnValue, s
 	ReturnValue->Val->Pointer =  NULL  ;
 }
 
-void qwPushButtonResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+
+void qLabelSetText(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	QLabel *w0 = (QLabel*) Param[0]->Val->Pointer  ;	
+    QString *pstr = (QString*) Param[1]->Val->Pointer  ;
+
+	(*w0).setText( *pstr );
+
+	ReturnValue->Val->Pointer =  NULL  ;
+}
+
+// ...................................................................................................................... RESIZE
+
+void qPushButtonResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QPushButton *w0 = (QPushButton*) Param[0]->Val->Pointer  ;	
 	int width  = (int) Param[1]->Val->Integer  ;
@@ -104,17 +126,7 @@ void qwPushButtonResize(struct ParseState *Parser, struct Value *ReturnValue, st
 }
 
 
-void qwLabelSetText(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
-{
-	QLabel *w0 = (QLabel*) Param[0]->Val->Pointer  ;	
-    QString *pstr = (QString*) Param[1]->Val->Pointer  ;
-
-	(*w0).setText( *pstr );
-
-	ReturnValue->Val->Pointer =  NULL  ;
-}
-
-void qwLabelResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qLabelResize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	QLabel *w0 = (QLabel*) Param[0]->Val->Pointer  ;	
 	int width  = (int) Param[1]->Val->Integer  ;
@@ -125,51 +137,6 @@ void qwLabelResize(struct ParseState *Parser, struct Value *ReturnValue, struct 
 	ReturnValue->Val->Pointer =  NULL  ;
 }
 
-/**/
-
-void qWidgetNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
-{
-	int 	qParentType 	= (int) Param[0]->Val->Integer  ;
-	QWidget 	 *p 		= (QWidget*) Param[1]->Val->Pointer  ;	 
-	int 	qChildType 		= (int) Param[2]->Val->Integer  ;
- 
-
-	if ( qParentType == _qWindow ) 		
-	{
-			QWidget 	 *p = (QWidget*) Param[1]->Val->Pointer  ;	
-	}
- 	if ( qParentType == _qPushButton ) 		
-	{
-			QPushButton 	 *p = (QPushButton*) Param[1]->Val->Pointer  ;	
-	}
-	
-	// ......................................................................... new qWindow
- 
-	if ( ( qParentType == (int)NULL ) && ( qChildType == _qWindow ) )	
-	{
-		QWidget *w  = new QWidget();
-		ReturnValue->Val->Pointer =  (void*) w  ;
-	}
-	else
-	{
-		QWidget *w  = new QWidget(p);
-		ReturnValue->Val->Pointer =  (void*) w  ;
-	}		
- 
-	// ......................................................................... new qPushButton
- 
-	if ( ( qParentType == (int)NULL ) && ( qChildType == _qPushButton ) )	
-	{
-		QPushButton *w  = new QPushButton();
-		ReturnValue->Val->Pointer =  (void*) w  ;
-	}
-	else
-	{
-		QPushButton *w  = new QPushButton(p);
-		ReturnValue->Val->Pointer =  (void*) w  ;
-	}	
- 
-}
 
 // **********
 // 
@@ -184,10 +151,23 @@ std::vector<int> qVectorEventType ;
 std::vector<int> qVectorWidgetType ;  
 std::vector<void*> qVectorSender ;  
 
-void qEventClick(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qWidgetEventClick(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	int 	qWidgetType 	= (int) Param[0]->Val->Integer  ;
-
+	
+	if ( ( qWidgetType == _qWidget ) || ( qWidgetType == _qWidget ) )
+	{
+		/*
+		QPushButton *sender	= (QPushButton*) Param[1]->Val->Pointer  ;	
+		QObject::connect( sender, &QPushButton::clicked, [=] () 
+		{
+			qVectorEventType.push_back  ( _qClick ) ;
+			qVectorWidgetType.push_back ( _qPushButton ) ;
+			qVectorSender.push_back ( (void*) sender ) ;			
+        } );
+		*/
+		printf ( "\n? Error : qWidget / qWindow has not : click event \n" );
+	}
 	if ( qWidgetType == _qPushButton ) 
 	{
 		QPushButton *sender	= (QPushButton*) Param[1]->Val->Pointer  ;	
@@ -201,31 +181,40 @@ void qEventClick(struct ParseState *Parser, struct Value *ReturnValue, struct Va
  
 }
 
- 
-void qEventCheck(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+void qWidgetEventCheck(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	int 	qEventType 		= (int) Param[0]->Val->Integer  ;
 	int 	qWidgetType 	= (int) Param[1]->Val->Integer  ;
 	QWidget 	 *sender 	= (QWidget*) Param[2]->Val->Pointer  ;		
+	int fRemove=-1;
 	
-	std::vector<int> myvector;
-	for (int i=1; i<=5; i++) myvector.push_back(i);
-
-	for (int i=0; i< qVectorEventType.size(); i++ )
+	ReturnValue->Val->Integer =  0 ;
+	
+	int i=0;
+	for (i=0; i< qVectorEventType.size(); i++ )
 	{
 		if ( ( qVectorEventType[i] == qEventType ) && ( qVectorWidgetType[i] == qWidgetType )  )
 		{
+			// ................................................................... Push Button
 			if ( qWidgetType == _qPushButton ) 
 			{
 				if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
 				{
 					ReturnValue->Val->Integer =  1 ;
+					fRemove=i;
 					break ;
 				}
 			}
 		}
 	}
+	if ( fRemove>=0 )
+	{
+		qVectorEventType.erase  (qVectorEventType.begin()+fRemove);
+		qVectorWidgetType.erase (qVectorWidgetType.begin()+fRemove);
+		qVectorSender.erase     (qVectorSender.begin()+fRemove);		
+	}
 }
+// ........................................................................................................ ASYNC
 
 void qAsync(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 { 
@@ -236,46 +225,56 @@ void qAsync(struct ParseState *Parser, struct Value *ReturnValue, struct Value *
 // HEADER
 // ******
 
- 
 	struct LibraryFunction qWidget[] =
 	{
 		// .............................................................. NEW	
 		
-		{ qwWidgetNew		,   "void*  qwWidgetNew			( void );" },
-		{ qwWidgetNew		,   "void*  qwWindowNew			( void );" },
+		{ qWindowNew		,   "void*  qWindowNew			( void );" },
+		{ qPushButtonNew	,   "void*  qPushButtonNew		( void* );" },
+        { qLabelNew			,   "void*  qLabelNew			( void* );" },
 		
-		{ qwPushButtonNew	,   "void*  qwPushButtonNew		( void* );" },
-        { qwLabelNew		,   "void*  qwLabelNew			( void* );" },
-		
-		// .............................................................. WIDGET
-		
- 		{ qwShow				,   "void*  qwShow				( void* );" },
- 		{ qwResize				,   "void   qwResize			( void*,long,long );" },
- 		{ qwMove				,   "void   qwMove				( void*,long,long );" },
-		
- 		{ qwPushButtonSetText	,   "void   qwPushButtonSetText	( void*,void* );" },
- 		{ qwPushButtonResize	,   "void   qwPushButtonResize	( void*,long,long );" },
+		// .............................................................. SHOW 
 
- 		{ qwLabelSetText		,   "void   qwLabelSetText		( void*,void* );" },
- 		{ qwLabelResize			,   "void   qwLabelResize		( void*,long,long );" },
+		 { qWidgetShow				,   "void*  qWindowShow		( void* );" },
+		 { qWidgetShow				,   "void*  qPushButtonShow	( void* );" },		
+		 { qWidgetShow				,   "void*  qLabelShow		( void* );" },
+		 
+		// .............................................................. RESIZE 
 		
+ 		{ qWidgetResize				,   "void   qWindowResize		( void*,long,long );" },
+ 		{ qWidgetResize				,   "void   qPushButtonResize	( void*,long,long );" },
+ 		{ qWidgetResize				,   "void   qLabelResize		( void*,long,long );" },	
+		
+		// .............................................................. MOVE
+				
+ 		{ qWidgetMove				,   "void   qWindowMove				( void*,long,long );" },
+ 		{ qWidgetMove				,   "void   qPushButtonMove			( void*,long,long );" },
+ 		{ qWidgetMove				,   "void   qLabelMove				( void*,long,long );" },
+		
+		// .............................................................. SET TEXT , SET TITLE
+		
+ 		{ qWindowSetTitle		,   "void*  qWindowSetTitle		( void* , void* );" },
+ 		{ qPushButtonSetText	,   "void   qPushButtonSetTitle	( void*,void* );" },
+ 		{ qLabelSetText			,   "void   qLabelSetTitle		( void*,void* );" },	
+		
+ 		{ qWindowSetTitle		,   "void*  qWindowSetText		( void* , void* );" },
+ 		{ qPushButtonSetText	,   "void   qPushButtonSetText	( void*,void* );" },
+ 		{ qLabelSetText			,   "void   qLabelSetText		( void*,void* );" },	
+
+	
 		// .............................................................. SET ATTRIBUTE	
 		
 
- 		{ qwWindowSetTitle	,   "void*  qwWindowSetTitle	( void* , void* );" },
-		
-		/**/
-		
- 		{ qWidgetNew		,   "void*  qWidgetNew	( int , void* , int );" }, // DEPRECATED
-		
-		/**/
+		// .............................................................. EVENT
 
- 		{ qEventClick		,   "void   qEventClick	( int , void*  );" },  	
-  
- 		{ qEventCheck		,   "int   qEventCheck	( int , int , void*  );" },  		
+ 		{ qWidgetEventClick		,   "void   qWidgetEventClick	( int , void*  );" },  	
+  		{ qWidgetEventCheck		,   "int    qWidgetEventCheck	( int , int , void*  );" },  		
 
-
+		// .............................................................. CORE / ASYNC
+		
  		{ qAsync			,   "void   qAsync	( void  );" },  
+		
+		/**/
 		
 		{ NULL,             NULL }
 	};

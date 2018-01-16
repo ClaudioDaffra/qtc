@@ -24,9 +24,10 @@ int picoc_main(int argc, char **argv)
     
     if (argc < 2)
     {
-        printf("Format: picoc <csource1.c>... [- <arg1>...]    : run a program (calls main() to start it)\n"
-               "        picoc -s <csource1.c>... [- <arg1>...] : script mode - runs the program without calling main()\n"
-               "        picoc -i                               : interactive mode\n");
+		printf("%s %s %s <%s>\n",QTC_VER,QTC_AUTHORS,QTC_EMAIL,QTC_LICENSE);
+        printf("\nFormat: qtc <csource1.c>... [- <arg1>...]    : run a program (calls main() to start it)\n"
+               "        qtc -s <csource1.c>... [- <arg1>...] : script mode - runs the program without calling main()\n"
+               "        qtc -i                               : interactive mode\n");
         exit(1);
     }
     

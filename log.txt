@@ -1,4 +1,7 @@
 
+	qWidget simplified the name of the functions
+	add Authors
+	fix bug Event Manager ( remove automatically event when checked ) 
 	added Event Manager
 	added async loop
 	
