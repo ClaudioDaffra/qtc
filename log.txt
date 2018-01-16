@@ -1,4 +1,9 @@
 
+	added Event Manager
+	added async loop
+	
+2018 / 15 / 01
+
 	DEPRECATED : qWidgetNew ( )
 	
 	change qwSetWindowTitle in qwWindowSetTitle

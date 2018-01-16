@@ -13,6 +13,7 @@
 
 #include <QApplication>
 #include <QtWidgets>
+#include <vector>
 #include "../interpreter.h"
 
 
@@ -170,6 +171,67 @@ void qWidgetNew(struct ParseState *Parser, struct Value *ReturnValue, struct Val
  
 }
 
+// **********
+// 
+// EVENT
+//
+// **********
+
+//
+// qEventType , qWidgetType , sender
+//
+std::vector<int> qVectorEventType ;  
+std::vector<int> qVectorWidgetType ;  
+std::vector<void*> qVectorSender ;  
+
+void qEventClick(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	int 	qWidgetType 	= (int) Param[0]->Val->Integer  ;
+
+	if ( qWidgetType == _qPushButton ) 
+	{
+		QPushButton *sender	= (QPushButton*) Param[1]->Val->Pointer  ;	
+		QObject::connect( sender, &QPushButton::clicked, [=] () 
+		{
+			qVectorEventType.push_back  ( _qClick ) ;
+			qVectorWidgetType.push_back ( _qPushButton ) ;
+			qVectorSender.push_back ( (void*) sender ) ;			
+        } );
+	}
+ 
+}
+
+ 
+void qEventCheck(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	int 	qEventType 		= (int) Param[0]->Val->Integer  ;
+	int 	qWidgetType 	= (int) Param[1]->Val->Integer  ;
+	QWidget 	 *sender 	= (QWidget*) Param[2]->Val->Pointer  ;		
+	
+	std::vector<int> myvector;
+	for (int i=1; i<=5; i++) myvector.push_back(i);
+
+	for (int i=0; i< qVectorEventType.size(); i++ )
+	{
+		if ( ( qVectorEventType[i] == qEventType ) && ( qVectorWidgetType[i] == qWidgetType )  )
+		{
+			if ( qWidgetType == _qPushButton ) 
+			{
+				if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
+				{
+					ReturnValue->Val->Integer =  1 ;
+					break ;
+				}
+			}
+		}
+	}
+}
+
+void qAsync(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{ 
+ QCoreApplication::processEvents();
+}
+
 // ******
 // HEADER
 // ******
@@ -205,6 +267,15 @@ void qWidgetNew(struct ParseState *Parser, struct Value *ReturnValue, struct Val
 		/**/
 		
  		{ qWidgetNew		,   "void*  qWidgetNew	( int , void* , int );" }, // DEPRECATED
+		
+		/**/
+
+ 		{ qEventClick		,   "void   qEventClick	( int , void*  );" },  	
+  
+ 		{ qEventCheck		,   "int   qEventCheck	( int , int , void*  );" },  		
+
+
+ 		{ qAsync			,   "void   qAsync	( void  );" },  
 		
 		{ NULL,             NULL }
 	};

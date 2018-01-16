@@ -11,8 +11,8 @@ extern "C"
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-	
-    picoc_main ( argc, argv);
+
+    picoc_main ( argc, argv );
 
     return app.exec();
 }
