@@ -1,0 +1,60 @@
+
+	DEPRECATED : qWidgetNew ( )
+	
+	change qwSetWindowTitle in qwWindowSetTitle
+	move tests in main directory
+	add qWidget Constant : 
+		qWindow , qPushButton
+		qClick
+		
+	add qWidgetNew
+	fix linkage issue from c / c++ in qWidgetLib
+
+2018 / 15 / 01
+
+	added debug symbol to UWP
+	added debuger to Visual Studio 2017
+	fix warnings kits
+
+2018 / 12 / 01
+
+	Add qPushButton , qLabel
+	Add qWidget Lib and example
+	Add Wiki page for Developers
+	Add New (survival) Members to qString
+
+2018 / 07 / 01
+
+	Add New (survival) Members
+	reformatting qString
+	added Doc to Library
+
+2018 / 06 / 01
+
+	added Logo
+
+	added types:
+		qString , integer , real , stringc , QChar
+
+	added in qString :
+		qcharFromInteger , qcharToInteger
+		qstrFromInteger , qstrFromReal 
+		qstrToIntefer , qstrToReal
+		update example 100.qString.c
+		
+	test :
+		windeployqt , framework installer
+		
+	add examples : 
+		200.stdint.c , 201.limits.c
+		
+	include Lib : 
+		limits.h , stdint.h
+	
+	License and Authors
+
+2018 / 01 / 05
+
+	initial Commit
+
+2018 / 01 / 04

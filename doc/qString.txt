@@ -1,0 +1,87 @@
+
+// ******************************
+//
+// qString Lib
+//
+// qtc , Claudio Daffra 
+// daffra.claudio@gmail.com
+//
+// ******************************
+
+
+// ............................................. types
+
+   integer  = long
+   real		= double
+   qString  = void*
+   qChar	= void*
+
+// .............................................................. NEW	
+
+void* 		qstrNew			( void );
+void* 		qcharNew		( void );
+
+void  		qstrDebug		( void* );	
+
+// .............................................................. CONVERT STRING FROM TO
+
+void*  		qstrFromStringc	( char * );
+qString*  	qstr 			( char * ); // shortcut
+char*  		qstrToStringc	( void * );
+
+void*  		qstrFromInteger	( long   );
+long   		qstrToInteger	( void*  );	
+
+void*  		qstrFromReal	( double );
+double 		qstrToReal		( void*  );	
+
+void* 		qcharFromString	( void *, int  );
+qChar* 		qstrAt			( void *, int  ); // shortcut
+void  		qcharToString	( qString *, qChar* , int );
+
+void* 		qcharFromInteger( long   );
+long  		qcharToInteger	( void*  );
+
+// .............................................................. TEST	
+
+int   		qstrCheck		( void* , char* , void* );	
+int   		qcharCheck		( void* , char* , void* );	
+int   		qstrContains	( void* , void* );	
+
+long		qstrEndsWith	( void* , void* );		
+long		qstrStartsWith	( void* , void* );		
+
+long  		qstrIndexOf		( void* , void* );	
+long  		qstrLastIndexOf	( void* , void* );	
+		
+// .............................................................. MANIPULATION	
+
+void  		qstrCopy		( void* , void* );
+void  		qstrAppend		( void* , void* );
+void  		qstrReplace		( void* , void* , void* ); 
+void*  		qstrToLower		( void* );		
+void*		qstrToUpper		( void* );	
+		
+// .............................................................. INFO / GET
+				
+long  		qstrLength		( void*  );" },
+long  		qstrSize		( void*  );" },		
+long  		qstrLen			( void*  );" },	
+
+void* 		qstrLeft		( void *, int  );
+void* 		qstrRight		( void *, int  );
+void* 		qstrMid			( void *, int , int );	
+
+int  		qstrCount		( void* , void* ); 
+
+//
+
+
+		
+		
+		
+		
+		
+		
+		
+		

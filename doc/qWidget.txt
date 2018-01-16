@@ -1,0 +1,41 @@
+
+// ******************************
+//
+// qidget Lib
+//
+// qtc , Claudio Daffra 
+// daffra.claudio@gmail.com
+//
+// ******************************
+
+ void*  qwNewWidget			( void );
+
+ void*  qwNewPushButton		( void* );
+ void*  qwNewLabel			( void* );
+		
+ // .............................................................. WIDGET
+		
+ void*  qwShow				( void* );
+ void   qwResize			( void*,long,long );
+ void   qwMove				( void*,long,long );
+		
+ void   qwPushButtonSetText	( void*,void* );
+ void   qwPushButtonResize	( void*,long,long );
+
+ void   qwLabelSetText		( void*,void* );
+ void   qwLabelResize		( void*,long,long );
+		
+ // .............................................................. SET ATTRIBUTE	
+		
+ void*  qwSetWindowTitle	( void* , void* );
+		
+
+
+		
+		
+		
+		
+		
+		
+		
+		
