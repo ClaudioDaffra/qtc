@@ -1,6 +1,5 @@
 
-	TODO windows flag ;
-
+	Add Windows Flags
 	Add widget.h
 	MainWindow add Events :
 		Control Close Button, Click

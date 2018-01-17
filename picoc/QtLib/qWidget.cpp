@@ -54,6 +54,12 @@ std::vector<void*> qVectorSender ;
 // class
 // ********** 
 
+// ESC viene utilizzato per chiudere tutte le finestre e uscire dall'applicazione;
+// in alternativa si usa il bottone Close Button
+// oppure il tasto Exit ;
+
+static int qFlagExitAll=0; 
+
 class MainWindow : public QMainWindow 
 {
 	public:
@@ -62,19 +68,7 @@ class MainWindow : public QMainWindow
 
 		}
 	public:
-/*
-        void keyPressEvent(QKeyEvent *ke)
-		{
-			 printf ( "\n OUT MAIN %d",qfEventLoop);
-			 if (ke->key() == Qt::Key_Escape)
-			 {
-				qfEventLoop=0;
-				printf ( "\n IN MAIN %d",qfEventLoop);	
-				QApplication::exit();
-				QApplication::quit();				
-			 }			
-		}
-*/
+ 
 	    int fClick=0;
 		void closeEvent (QCloseEvent *event);
 
@@ -85,20 +79,23 @@ class MainWindow : public QMainWindow
 
 void MainWindow::closeEvent (QCloseEvent *event)
 {
-    QMessageBox::StandardButton resBtn = QMessageBox::question( this, "Exit ?",
-                                                                tr("Are you sure?\n"),
-                                                                QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
-                                                                QMessageBox::Yes);
-    if (resBtn != QMessageBox::Yes) 
+	if ( qFlagExitAll==0 )
 	{
-		qfEventLoop=1;		
-        event->ignore();
-    } 
-	else 
-	{
-		qfEventLoop=0;
-        event->accept();
-    }
+		QMessageBox::StandardButton resBtn = QMessageBox::question( this, "Exit ?",
+																	tr("Are you sure?\n"),
+																	QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+																	QMessageBox::Yes);
+		if (resBtn != QMessageBox::Yes) 
+		{
+			qfEventLoop=1;		
+			event->ignore();
+		} 
+		else 
+		{
+			qfEventLoop=0;
+			event->accept();
+		}
+	}
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
@@ -127,11 +124,10 @@ class WidgetEsc : public QWidget
 	protected:
 		void keyPressEvent(QKeyEvent *ke) 
 		{
-			 printf ( "\n WidgetEsc out %d",qfEventLoop);
 			 if (ke->key() == Qt::Key_Escape)
 			 {
+				qFlagExitAll=1;
 				qfEventLoop=0;
-				printf ( "\n WidgetEsc in  %d",qfEventLoop);
 				
 				QApplication::closeAllWindows();				
 				QApplication::exit();
@@ -376,18 +372,33 @@ void qQuit(struct ParseState *Parser, struct Value *ReturnValue, struct Value **
 
 }
 
-//int _qWindowTitleHint				= Qt::WindowTitleHint ;
-//int _qWindowMaximizeButtonHint	= Qt::WindowMaximizeButtonHint ;
-//int _qWindowMinimizeButtonHint	= Qt::WindowMinimizeButtonHint ; 
+long _qCustomizeWindowHint		= Qt::CustomizeWindowHint ;
+long _qWindowTitleHint			= Qt::WindowTitleHint ;
+long _qWindowMaximizeButtonHint	= Qt::WindowMaximizeButtonHint ;
+long _qWindowMinimizeButtonHint	= Qt::WindowMinimizeButtonHint ; 
+long _qWindowCloseButtonHint	= Qt::WindowCloseButtonHint ; 
+
+
 
 void qWindowSetFlags(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	MainWindow 	 	*sender 	= (MainWindow*) Param[0]->Val->Pointer  ;		
-	int 	flags 		= (int) Param[1]->Val->Integer  ;	
-	
-	(*sender).setWindowFlags( Qt::CustomizeWindowHint );
+	long 	flags 				= (long) Param[1]->Val->Integer  ;	
 
+    (*sender).setWindowFlags( (Qt::WindowType)flags );
 }	
+
+void qWindowClose(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	MainWindow 	 	*sender 	= (MainWindow*) Param[0]->Val->Pointer  ;
+	qfEventLoop=0;	
+    (*sender).close();
+}	
+ 
+void qEventLoopStop(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	qfEventLoop=0;
+}
  
 // ******
 // HEADER
@@ -449,8 +460,8 @@ void qWindowSetFlags(struct ParseState *Parser, struct Value *ReturnValue, struc
  		{ qAsync			,   "int    qAsync		( void  );" }, 
         { qEventLoop		,   "int    qEventLoop	( void  );" },
  		{ qQuit				,   "void   qQuit		( void  );" }, 		
- 
-		
+ 		{ qWindowClose		,   "void   qWindowClose	( void*  );" },  
+ 		{ qEventLoopStop	,   "void   qEventLoopStop	( void  );" },  		
 		
 		/**/
 		
