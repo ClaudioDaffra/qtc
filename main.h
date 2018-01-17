@@ -37,12 +37,28 @@
 
 /**/
 
-#define _qWidget 		1000
-#define _qWindow 		1000
-#define _qPushButton 	1001
 
-#define _qClick		 	2000
 
 /**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

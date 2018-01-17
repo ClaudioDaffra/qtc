@@ -1,4 +1,9 @@
 
+	TODO windows flag ;
+
+	Add widget.h
+	MainWindow add Events :
+		Control Close Button, Click
 	fix exit  : console and gui,  without blocking
 	add GUI : MainWindow , Hide Close button , Check Esc Key
 	add console : MetaObject and send 'close' queue
