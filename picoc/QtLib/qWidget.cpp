@@ -16,16 +16,70 @@
 #include <vector>
 #include "../interpreter.h"
 
+#include <QKeyEvent>
+#include <QMainWindow>
+#include <QKeyEvent>
+#include <QWidget>
+#include <QtGui>
+
+#include <stdio.h>
+
+extern 	int qfEventLoop ;
+ 
 // ********** 
 // functions
 // ********** 
+
+// ....................
+//
+// Creiamo la finestra principale ,
+// gestiamo ESC key, nel loop eventi
+// 
+//
+
+class MainWindow : public QMainWindow 
+{
+	public:
+		MainWindow(QWidget *parent = 0) : QMainWindow(parent) 
+	{
+		
+	}
+	protected:
+		void keyPressEvent(QKeyEvent *ke) 
+		{
+		}
+};
+
+class WidgetEsc : public QWidget 
+{
+	public:
+		WidgetEsc(QWidget *parent = 0) : QWidget(parent) 
+		{
+			setFocusPolicy(Qt::StrongFocus);
+		}
+	protected:
+		void keyPressEvent(QKeyEvent *ke) 
+		{
+			 printf ( "\n%d",qfEventLoop);
+			 if (ke->key() == Qt::Key_Escape)
+			 {
+				qfEventLoop=0;
+			 }
+			
+		}
+};
+
 
 // ...................................................................................................................... NEW
 
 void qWindowNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
-    QWidget *p  = new QWidget();
-    ReturnValue->Val->Pointer =  (void*) p  ;
+	QWidget *p  = new QWidget();
+	(*p).setWindowFlags(Qt::SubWindow);	
+
+	WidgetEsc *w = new WidgetEsc(p); // bind check key press ESC
+
+	ReturnValue->Val->Pointer =  (void*) p  ;
 }
 
 void qPushButtonNew(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
@@ -147,6 +201,7 @@ void qLabelResize(struct ParseState *Parser, struct Value *ReturnValue, struct V
 //
 // qEventType , qWidgetType , sender
 //
+
 std::vector<int> qVectorEventType ;  
 std::vector<int> qVectorWidgetType ;  
 std::vector<void*> qVectorSender ;  
@@ -187,7 +242,7 @@ void qWidgetEventCheck(struct ParseState *Parser, struct Value *ReturnValue, str
 	int 	qWidgetType 	= (int) Param[1]->Val->Integer  ;
 	QWidget 	 *sender 	= (QWidget*) Param[2]->Val->Pointer  ;		
 	int fRemove=-1;
-	
+
 	ReturnValue->Val->Integer =  0 ;
 	
 	int i=0;
@@ -218,8 +273,16 @@ void qWidgetEventCheck(struct ParseState *Parser, struct Value *ReturnValue, str
 
 void qAsync(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 { 
- QCoreApplication::processEvents();
+	QCoreApplication::processEvents();
+	ReturnValue->Val->Integer =  qfEventLoop  ;
 }
+void qQuit(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{ 
+ QApplication::exit();
+ QApplication::quit();
+
+}
+
 
 // ******
 // HEADER
@@ -272,7 +335,9 @@ void qAsync(struct ParseState *Parser, struct Value *ReturnValue, struct Value *
 
 		// .............................................................. CORE / ASYNC
 		
- 		{ qAsync			,   "void   qAsync	( void  );" },  
+ 		{ qAsync			,   "int    qAsync	( void  );" }, 
+ 		{ qQuit				,   "void   qQuit	( void  );" }, 		
+
 		
 		/**/
 		

@@ -8,7 +8,7 @@ static const int qPushButton 	=        _qPushButton ;
 
 static const int qClick  		=        _qClick ;   
 
-
+int qfEventLoop=1;
 
 /* creates various system-dependent definitions */
 void qWdigetSetupFunc(Picoc *pc)
@@ -19,6 +19,8 @@ void qWdigetSetupFunc(Picoc *pc)
     VariableDefinePlatformVar(pc, NULL, "qPushButton", &pc->IntType, (union AnyValue *)&qPushButton, FALSE);
 	/**/
 	VariableDefinePlatformVar(pc, NULL, "qClick", &pc->IntType, (union AnyValue *)&qClick, FALSE);
+	/**/
+ 
 }
 
 

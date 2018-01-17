@@ -194,7 +194,9 @@ int StdioBasePrintf(struct ParseState *Parser, FILE *Stream, char *StrOut, int S
     SOStream.StrOutPtr = StrOut;
     SOStream.StrOutLen = StrOutLen;
     SOStream.CharCount = 0;
-    
+ 
+	//printf ( "\n StdioBasePrintf before while \n" ); 
+ 
     while (*FPos != '\0')
     {
         if (*FPos == '%')
@@ -313,6 +315,9 @@ int StdioBasePrintf(struct ParseState *Parser, FILE *Stream, char *StrOut, int S
             FPos++;
         }
     }
+
+	//printf ( "\n StdioBasePrintf after while \n" ); 
+
     
     /* null-terminate */
     if (SOStream.StrOutPtr != NULL && SOStream.StrOutLen > 0)

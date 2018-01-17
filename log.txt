@@ -1,4 +1,10 @@
 
+	fix exit  : console and gui,  without blocking
+	add GUI : MainWindow , Hide Close button , Check Esc Key
+	add console : MetaObject and send 'close' queue
+
+2018 / 16 / 01
+
 	qWidget simplified the name of the functions
 	add Authors
 	fix bug Event Manager ( remove automatically event when checked ) 

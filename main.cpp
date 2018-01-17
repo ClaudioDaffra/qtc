@@ -3,21 +3,27 @@
 #include <QApplication>
 #include <QtWidgets>
 
+
+
 extern "C"
 {
     int picoc_main(int argc, char **argv) ;
+ 
 }
 
 int main(int argc, char *argv[])
 {
-	// TODO solo quando uso le interfacce non esce bene
+	// fix, app.exec necessita che il widget venga chiuso, 
+	//		altrimenti non è in grado di determinare quando uscire
+	//      occorre forzarlo in questo modo, attraverso un qMetaObject()
+	 
+	QApplication app(argc, argv);
 	
-    QApplication app(argc, argv);
-
+ 	QWidget* x = new QWidget(nullptr);// nogui ok
     picoc_main ( argc, argv );
-
-    app.exec();
+	QMetaObject::invokeMethod( x, "close", Qt::QueuedConnection); // nogui ok
+ 
+    app.exec();  
 	
-
 	return 0 ;
 }

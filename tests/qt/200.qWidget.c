@@ -20,7 +20,7 @@ int main()
  
  qPushButtonSetText ( pb, qstr("Click me!") );
  qPushButtonResize  ( pb, 100,50 );
- 
+ qPushButtonMove  ( pb, 0,0 ); 
 
  qLabelSetText ( ll, qstr("LABEL") );
  qLabelResize  ( ll, 100,30 );
@@ -38,16 +38,17 @@ int main()
  qWindowShow( w0 ) ;
 
 
-  while(1)
+  while( qAsync() )
   {
 	  if ( qWidgetEventCheck ( qClick , qPushButton , pb ) ) 
 	  { 
-			printf ( "\nCLICK!!\n" ) ; 
-		    //break ;
+			printf ( "\nCLICK me to Exit\n" ) ;
+			break ;
 	  }
-	  qAsync() ;
+	   
   }
- 
+  
+ qQuit() ; 
  return 0;
 }
 
