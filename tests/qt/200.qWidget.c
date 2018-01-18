@@ -56,7 +56,11 @@ int main()
 		{ 
 			printf ( "\nCLICK qWindow 0 \n" ) ;
 		}
-	
+		if ( qWidgetEventCheck ( qKey , qWindow , w0 ) ) 
+		{ 
+			printf ( "\nKey qWindow w0 %d \n", qWindowGetKey(w0) ) ;
+		}
+
 	}
 
 	qQuit() ; 

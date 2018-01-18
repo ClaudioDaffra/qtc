@@ -24,7 +24,8 @@
 #include <QtGui>
 
 #include <stdio.h>
-
+#include <iostream>
+#include <string>
 
 
 // ********** 
@@ -43,7 +44,23 @@ extern 	int qfEventLoop ; // qWidgetConst.c
 
 std::vector<int> qVectorEventType ;  
 std::vector<int> qVectorWidgetType ;  
-std::vector<void*> qVectorSender ;  
+std::vector<void*> qVectorSender ; 
+
+//
+// qEventEventKey
+//
+
+std::vector<void*> 	qVectorEventKeySender ;
+std::vector<long> 	qVectorEventKeyDataCode ;
+ 
+
+void qVectorEventPush ( int EventType , int WidgetType , void* sender )
+{
+	//printf ( "\n push event %d %d %u",EventType,WidgetType,(unsigned)sender ) ;
+	qVectorEventType.push_back  ( EventType ) ;
+	qVectorWidgetType.push_back ( WidgetType ) ;
+	qVectorSender.push_back ( sender ) ;
+}
 
 //
 // Creiamo la finestra principale ,
@@ -65,12 +82,11 @@ class MainWindow : public QMainWindow
 	public:
 		MainWindow(QWidget *parent = 0) : QMainWindow(parent) 
 		{
-
 		}
 	public:
- 
-	    int fClick=0;
+	    int fClick=0; // flag utente che richiede evento click
 		void closeEvent (QCloseEvent *event);
+		void* pointerToWidgetEsc = nullptr;
 
     public:		
 		void mousePressEvent(QMouseEvent *event);	
@@ -100,7 +116,7 @@ void MainWindow::closeEvent (QCloseEvent *event)
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
-	// se abbiamo ricevuto l'ok dall'utente allora possiamo gesireil click sulla finestra.
+	// se abbiamo ricevuto l'ok dall'utente allora possiamo gestire il  click sulla finestra.
 	if ( fClick )
 	{
 		if(event->button()==Qt::LeftButton)
@@ -117,13 +133,21 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 class WidgetEsc : public QWidget 
 {
 	public:
+	    void* pointerToParent = nullptr;
 		WidgetEsc(QWidget *parent = 0) : QWidget(parent) 
 		{
 			setFocusPolicy(Qt::StrongFocus);
 		}
+ 		QKeyEvent *qKey ; // tasto dal gestore eventi ( widgetEsc )
 	protected:
 		void keyPressEvent(QKeyEvent *ke) 
 		{
+             qKey=ke; // ultimo tasto premuto
+			 qVectorEventPush ( _qKey , _qWindow , pointerToParent ) ; // il check dell'evento viene fatto sul parente
+			 
+			qVectorEventKeySender.push_back( pointerToParent ) ;
+			qVectorEventKeyDataCode.push_back( ke->key() ) ;
+			
 			 if (ke->key() == Qt::Key_Escape)
 			 {
 				qFlagExitAll=1;
@@ -132,8 +156,11 @@ class WidgetEsc : public QWidget
 				QApplication::closeAllWindows();				
 				QApplication::exit();
 				QApplication::quit();
-				
 			 }
+		}
+		long getKey(void) const
+		{
+			return ((long)qKey->key());
 		}
 };
 
@@ -147,8 +174,10 @@ void qWindowNew(struct ParseState *Parser, struct Value *ReturnValue, struct Val
 {
 	MainWindow *p = new MainWindow() ;
 	
-	WidgetEsc *w = new WidgetEsc(p); // bind check key press ESC
-
+	WidgetEsc *w = new WidgetEsc(p); // unisci il controllo dell evento keypress 'esc'
+	(*w).pointerToParent = (void*) p ; // l'evento key accade nel widgetEsc, ma il l'evento vien attribuito al parente MainWindow
+	(*p).pointerToWidgetEsc = (void*) w ; // mettiamo in comunicazione padre e figlio ( sicuramente ci sarà un'altro modo )
+	
 	ReturnValue->Val->Pointer =  (void*) p  ;
 }
 
@@ -268,8 +297,6 @@ void qLabelResize(struct ParseState *Parser, struct Value *ReturnValue, struct V
 //
 // **********
 
-
-
 void qWidgetEventClick(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
 	int 	qWidgetType 	= (int) Param[0]->Val->Integer  ;
@@ -317,32 +344,51 @@ void qWidgetEventCheck(struct ParseState *Parser, struct Value *ReturnValue, str
 	{
 		if ( ( qVectorEventType[i] == qEventType ) && ( qVectorWidgetType[i] == qWidgetType )  )
 		{
-			// ............................................................................. Push Button
-			if ( qWidgetType == _qPushButton ) 
+			// ---------------------------------------------------------------------------------------- CLICK
+            if ( qEventType==_qClick)
 			{
-				if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
+				// ............................................................................. Push Button
+				if ( qWidgetType == _qPushButton ) 
 				{
-					ReturnValue->Val->Integer =  1 ;
-					fRemove=i;
-					break ;
+					if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
+					{
+						ReturnValue->Val->Integer =  1 ;
+						fRemove=i;
+						break ;
+					}
 				}
+				// ............................................................................. Window
+				if ( qWidgetType == _qWindow ) 
+				{
+					if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
+					{
+						ReturnValue->Val->Integer =  1 ;
+						fRemove=i;
+						break ;
+					}
+				}	
+				// ............................................................................. qLabel 
+				if ( qWidgetType == _qLabel ) 
+				{
+					printf ( "\n?! info : qLabel Check Click , not implemeted yet.\n" );
+					ReturnValue->Val->Integer =  1 ;
+					break;
+				}	
 			}
-			// ............................................................................. Window
-			if ( qWidgetType == _qWindow ) 
+			// ---------------------------------------------------------------------------------------- KEY
+            if ( qEventType==_qKey )
 			{
-				if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
+				// ............................................................................. Window
+				if ( qWidgetType == _qWindow ) 
 				{
-					ReturnValue->Val->Integer =  1 ;
-					fRemove=i;
-					break ;
-				}
-			}	
-			// ............................................................................. qLabel 
-			if ( qWidgetType == _qLabel ) 
-			{
-				printf ( "\n?! info : qLabel Check Click , not implemeted yet.\n" );
-			}			
-			
+					if ( (void*) Param[2]->Val->Pointer == (void*) qVectorSender[i] )
+					{
+						fRemove=i;
+						ReturnValue->Val->Integer =  1 ;
+						break ;
+					}
+				}				
+			}
 		}
 	}
 	// .................................................................................... rimuovi il segnale
@@ -400,12 +446,42 @@ void qEventLoopStop(struct ParseState *Parser, struct Value *ReturnValue, struct
 	qfEventLoop=0;
 }
  
+void qWindowGetKey(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+ 	int fRemove=-1;
+	ReturnValue->Val->Integer =  -1 ;
+ 
+ 	int i=0;
+	for (i=0; i< qVectorEventKeySender.size(); i++ )
+	{
+ 
+		if ( (void*) Param[0]->Val->Pointer == (void*) qVectorEventKeySender[i] )
+		{
+			ReturnValue->Val->Integer =  qVectorEventKeyDataCode[i] ;
+			fRemove=i;
+			break ;
+		}		
+	}
+ 
+ 	// .................................................................................... rimuovi il segnale
+	if ( fRemove>=0 )
+	{
+		qVectorEventKeySender.erase  	(	qVectorEventKeySender.begin()+fRemove	);
+		qVectorEventKeyDataCode.erase  	(	qVectorEventKeyDataCode.begin()+fRemove	);
+	}
+ 
+}
+
 // ******
 // HEADER
 // ******
 
 	struct LibraryFunction qWidget[] =
 	{
+
+		// .............................................................. KEY	
+		
+		{ qWindowGetKey		,   "long  qWindowGetKey	( void* );" },
 		
 		// .............................................................. FLAG	
 		
@@ -455,7 +531,7 @@ void qEventLoopStop(struct ParseState *Parser, struct Value *ReturnValue, struct
  		{ qWidgetEventClick		,   "void   qWidgetEventClick	( int , void*  );" },  	
   		{ qWidgetEventCheck		,   "int    qWidgetEventCheck	( int , int , void*  );" },  		
 
-		// .............................................................. CORE / ASYNC
+		// .............................................................. CLOSE / CORE / ASYNC
 		
  		{ qAsync			,   "int    qAsync		( void  );" }, 
         { qEventLoop		,   "int    qEventLoop	( void  );" },

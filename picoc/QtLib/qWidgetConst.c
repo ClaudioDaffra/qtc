@@ -21,6 +21,7 @@ static const int qPushButton 	=        _qPushButton ;
 static const int qLabel 		=        _qLabel ;  
 
 static const int qClick  		=        _qClick ;   
+static const int qKey	  		=        _qKey ;  
 
 int qfEventLoop=1;
  
@@ -42,7 +43,8 @@ void qWdigetSetupFunc(Picoc *pc)
 	// Events
 		
 	VariableDefinePlatformVar(pc, NULL, "qClick"		, &pc->IntType, (union AnyValue *)&qClick, FALSE);
-
+	VariableDefinePlatformVar(pc, NULL, "qKey"			, &pc->IntType, (union AnyValue *)&qKey, FALSE);
+	
 	// Flags
 
 	VariableDefinePlatformVar(pc, NULL, "qCustomizeWindowHint"		, &pc->IntType, (union AnyValue *)&_qCustomizeWindowHint		, FALSE);	
