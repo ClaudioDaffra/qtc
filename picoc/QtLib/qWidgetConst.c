@@ -23,9 +23,19 @@ static const int qLabel 		=        _qLabel ;
 static const int qClick  		=        _qClick ;   
 static const int qKey	  		=        _qKey ;  
 
-int qfEventLoop=1;
+int qfEventLoop=1; 
  
-// need only here
+
+// SpecialKey
+
+static const int qKey_Shift  	=        _qKey_Shift ;   
+static const int qKey_Control	=        _qKey_Control ;  
+static const int qKey_Meta  	=        _qKey_Meta ;   
+static const int qKey_Alt		=        _qKey_Alt ;  
+static const int qKey_AltGr 	=        _qKey_AltGr ;   
+  
+// Key
+
 
 // ********** 
 // extern
@@ -52,6 +62,20 @@ void qWdigetSetupFunc(Picoc *pc)
 	VariableDefinePlatformVar(pc, NULL, "qWindowMaximizeButtonHint"	, &pc->IntType, (union AnyValue *)&_qWindowMaximizeButtonHint	, FALSE);
 	VariableDefinePlatformVar(pc, NULL, "qWindowMinimizeButtonHint"	, &pc->IntType, (union AnyValue *)&_qWindowMinimizeButtonHint	, FALSE);
 	VariableDefinePlatformVar(pc, NULL, "qWindowCloseButtonHint"	, &pc->IntType, (union AnyValue *)&_qWindowCloseButtonHint		, FALSE);
+	
+	// SpecialKey
+
+	VariableDefinePlatformVar(pc, NULL, "qKey_Shift"		, &pc->IntType, (union AnyValue *)&qKey_Shift	, FALSE);	
+	VariableDefinePlatformVar(pc, NULL, "qKey_Control"		, &pc->IntType, (union AnyValue *)&qKey_Control	, FALSE);
+	VariableDefinePlatformVar(pc, NULL, "qKey_Meta"			, &pc->IntType, (union AnyValue *)&qKey_Meta	, FALSE);	
+	VariableDefinePlatformVar(pc, NULL, "qKey_Alt"			, &pc->IntType, (union AnyValue *)&qKey_Alt		, FALSE);
+	VariableDefinePlatformVar(pc, NULL, "qKey_AltGr"		, &pc->IntType, (union AnyValue *)&qKey_AltGr	, FALSE);	
+ 
+	
+	// Key
+
+ 
+ 
 	
 }
 

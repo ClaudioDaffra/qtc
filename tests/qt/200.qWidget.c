@@ -58,7 +58,7 @@ int main()
 		}
 		if ( qWidgetEventCheck ( qKey , qWindow , w0 ) ) 
 		{ 
-			printf ( "\nKey qWindow w0 %d \n", qWindowGetKey(w0) ) ;
+			printf ( "\nKey qWindow w0 key: %d specialKey: %d\n", qWindowGetKey(w0) ,qWindowGetSpecialKey(w0) );
 		}
 
 	}

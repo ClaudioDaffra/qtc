@@ -1,4 +1,5 @@
- 
+
+	Add code key in qWideth.h , add const specialKey in qtc
 	Add Event Key Main Window
 	Add Windows Flags
 	Add widget.h

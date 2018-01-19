@@ -51,8 +51,8 @@ std::vector<void*> qVectorSender ;
 //
 
 std::vector<void*> 	qVectorEventKeySender ;
-std::vector<long> 	qVectorEventKeyDataCode ;
- 
+std::vector<long> 	qVectorEventKey ;
+
 
 void qVectorEventPush ( int EventType , int WidgetType , void* sender )
 {
@@ -146,7 +146,7 @@ class WidgetEsc : public QWidget
 			 qVectorEventPush ( _qKey , _qWindow , pointerToParent ) ; // il check dell'evento viene fatto sul parente
 			 
 			qVectorEventKeySender.push_back( pointerToParent ) ;
-			qVectorEventKeyDataCode.push_back( ke->key() ) ;
+			qVectorEventKey.push_back( ke->key() ) ;
 			
 			 if (ke->key() == Qt::Key_Escape)
 			 {
@@ -457,19 +457,36 @@ void qWindowGetKey(struct ParseState *Parser, struct Value *ReturnValue, struct 
  
 		if ( (void*) Param[0]->Val->Pointer == (void*) qVectorEventKeySender[i] )
 		{
-			ReturnValue->Val->Integer =  qVectorEventKeyDataCode[i] ;
-			fRemove=i;
+			ReturnValue->Val->Integer =  qVectorEventKey[i] ;
 			break ;
 		}		
 	}
+
+}
+void qWindowGetSpecialKey(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+ 	int fRemove=-1;
+	ReturnValue->Val->Integer =  -1 ;
  
- 	// .................................................................................... rimuovi il segnale
-	if ( fRemove>=0 )
+ 	int i=0;
+	int key=-1;
+	for (i=0; i< qVectorEventKeySender.size(); i++ )
 	{
-		qVectorEventKeySender.erase  	(	qVectorEventKeySender.begin()+fRemove	);
-		qVectorEventKeyDataCode.erase  	(	qVectorEventKeyDataCode.begin()+fRemove	);
+ 		if ( (void*) Param[0]->Val->Pointer == (void*) qVectorEventKeySender[i] )
+		{
+			switch ( qVectorEventKey[i] ) 
+			{
+                case Qt::Key_Shift:
+                case Qt::Key_Control:
+                case Qt::Key_Meta:
+                case Qt::Key_Alt:
+                case Qt::Key_AltGr:
+					key = qVectorEventKey[i] ;
+					break ;
+			}
+		}		
 	}
- 
+	ReturnValue->Val->Integer =  key ;
 }
 
 // ******
@@ -481,7 +498,8 @@ void qWindowGetKey(struct ParseState *Parser, struct Value *ReturnValue, struct 
 
 		// .............................................................. KEY	
 		
-		{ qWindowGetKey		,   "long  qWindowGetKey	( void* );" },
+		{ qWindowGetKey			,   "long  qWindowGetKey		( void* );" },
+		{ qWindowGetSpecialKey	,   "long  qWindowGetSpecialKey	( void* );" },	
 		
 		// .............................................................. FLAG	
 		
