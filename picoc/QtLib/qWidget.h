@@ -22,7 +22,7 @@
 #define _qKey_AltGr		0x01001103 
 
 // ....................................... qKey 
- /*
+ 
 #define _qKey_F1	0x01000030	 
 #define _qKey_F2	0x01000031	 
 #define _qKey_F3	0x01000032	 
@@ -32,9 +32,9 @@
 #define _qKey_F7	0x01000036	 
 #define _qKey_F8	0x01000037	 
 #define _qKey_F9	0x01000038	 
-#define _qKey_F10 0x01000039	 
-#define _qKey_F11 0x0100003a	 
-#define _qKey_F12 0x0100003b
+#define _qKey_F10   0x01000039	 
+#define _qKey_F11   0x0100003a	 
+#define _qKey_F12   0x0100003b
 
 #define _qKey_Escape	0x01000000	 
 #define _qKey_Tab	0x01000001	 
@@ -56,11 +56,11 @@
 #define _qKey_Down	0x01000015	 
 #define _qKey_PageUp	0x01000016	 
 #define _qKey_PageDown	0x01000017	 
-	  
+  
 #define _qKey_CapsLock	0x01000024	 
 #define _qKey_NumLock	0x01000025	 
 #define _qKey_ScrollLock	0x01000026
-
+/*
 #define _qKey_Space	0x20
 #define _qKey_Exclam	0x21	 
 #define _qKey_QuoteDbl	0x22	 

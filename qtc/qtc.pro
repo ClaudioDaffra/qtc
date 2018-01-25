@@ -53,7 +53,12 @@ SOURCES += ../main.cpp \
     ../picoc/cstdlib/limits.c \
     ../picoc/cstdlib/stdint.c \
     ../picoc/QtLib/qWidget.cpp \
-    ../picoc/QtLib/qWidgetConst.c
+    ../picoc/QtLib/qWidgetConst.c \
+    ../picoc/QtLib/qPaint.cpp \
+    ../picoc/QtLib/qPaintConst.c \
+    ../picoc/QtLib/qComplex.cpp \
+    ../picoc/QtLib/qComplexConst.c
+
 
 
 
@@ -62,4 +67,7 @@ HEADERS += \
     ../picoc/picoc.h \
     ../picoc/platform.h \
     ../picoc/interpreter.h \
-    ../main.h
+    ../main.h \
+    ../picoc/QtLib/qPaint.h \
+    ../picoc/QtLib/qComplex.h
+

@@ -1,4 +1,8 @@
 
+	add lib qPaint , qComplex ( initial commit ) 
+
+2018 / 25 / 01
+
 	Add code key in qWideth.h , add const specialKey in qtc
 	Add Event Key Main Window
 	Add Windows Flags

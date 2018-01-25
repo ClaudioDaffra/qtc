@@ -1,0 +1,1062 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.00      0.01     0.01        1    10.00    10.00  TypeInit
+  0.00      0.01     0.00     1637     0.00     0.00  LexTokenSize
+  0.00      0.01     0.00     1057     0.00     0.00  LexGetRawToken
+  0.00      0.01     0.00     1057     0.00     0.00  LexGetToken
+  0.00      0.01     0.00      670     0.00     0.00  ParserCopy
+  0.00      0.01     0.00      580     0.00     0.00  LexScanGetToken
+  0.00      0.01     0.00      401     0.00     0.00  TableInitTable
+  0.00      0.01     0.00      392     0.00     0.00  HeapFreeMem
+  0.00      0.01     0.00      391     0.00     0.00  HeapAllocMem
+  0.00      0.01     0.00      368     0.00     0.00  TableDelete
+  0.00      0.01     0.00      330     0.00     0.00  TableInit
+  0.00      0.01     0.00      329     0.00     0.00  TableSetIdentifier
+  0.00      0.01     0.00      329     0.00     0.00  TableStrRegister2
+  0.00      0.01     0.00      278     0.00     0.00  TableGet
+  0.00      0.01     0.00      240     0.00     0.00  VariableAlloc
+  0.00      0.01     0.00      209     0.00     0.00  LexCheckReservedWord
+  0.00      0.01     0.00      209     0.00     0.00  LexGetWord
+  0.00      0.01     0.00      142     0.00     0.00  TypeParseIdentPart
+  0.00      0.01     0.00      141     0.00     0.00  TypeParseFront
+  0.00      0.01     0.00      137     0.00     0.00  TypeParse
+  0.00      0.01     0.00      116     0.00     0.00  TableStrRegister
+  0.00      0.01     0.00      115     0.00     0.00  TableSet
+  0.00      0.01     0.00       97     0.00     0.00  HeapAllocStack
+  0.00      0.01     0.00       91     0.00     0.00  VariableAllocValueAndData
+  0.00      0.01     0.00       83     0.00     0.00  HeapPopStack
+  0.00      0.01     0.00       76     0.00     0.00  TypeGetMatching
+  0.00      0.01     0.00       76     0.00     0.00  VariableFree
+  0.00      0.01     0.00       69     0.00     0.00  debugf
+  0.00      0.01     0.00       54     0.00     0.00  TypeParseBack
+  0.00      0.01     0.00       52     0.00     0.00  VariableGet
+  0.00      0.01     0.00       50     0.00     0.00  LexAnalyse
+  0.00      0.01     0.00       50     0.00     0.00  LexInitParser
+  0.00      0.01     0.00       50     0.00     0.00  LexTokenise
+  0.00      0.01     0.00       48     0.00     0.00  ParseCountParams
+  0.00      0.01     0.00       48     0.00     0.00  ParseFunctionDefinition
+  0.00      0.01     0.00       24     0.00     0.00  TypeSizeValue
+  0.00      0.01     0.00       20     0.00     0.00  LexUnEscapeCharacter
+  0.00      0.01     0.00       19     0.00     0.00  ParseStatement
+  0.00      0.01     0.00       18     0.00     0.00  VariableDefinePlatformVar
+  0.00      0.01     0.00       17     0.00     0.00  ExpressionStackCollapse
+  0.00      0.01     0.00       17     0.00     0.00  ExpressionStackPushValueNode
+  0.00      0.01     0.00       16     0.00     0.00  ExpressionParse
+  0.00      0.01     0.00       16     0.00     0.00  IsTypeToken
+  0.00      0.01     0.00       14     0.00     0.00  DebugCheckStatement
+  0.00      0.01     0.00       14     0.00     0.00  TypeAddBaseType
+  0.00      0.01     0.00       13     0.00     0.00  TypeSize
+  0.00      0.01     0.00       13     0.00     0.00  VariableAllocValueFromType
+  0.00      0.01     0.00       11     0.00     0.00  VariableStackPop
+  0.00      0.01     0.00        9     0.00     0.00  IncludeRegister
+  0.00      0.01     0.00        9     0.00     0.00  VariableAllocValueAndCopy
+  0.00      0.01     0.00        8     0.00     0.00  TypeAdd
+  0.00      0.01     0.00        8     0.00     0.00  VariableDefined
+  0.00      0.01     0.00        7     0.00     0.00  ExpressionStackPushValue
+  0.00      0.01     0.00        7     0.00     0.00  VariableDefine
+  0.00      0.01     0.00        6     0.00     0.00  ExpressionAssign
+  0.00      0.01     0.00        6     0.00     0.00  TypeStackSizeValue
+  0.00      0.01     0.00        5     0.00     0.00  ExpressionCoerceInteger
+  0.00      0.01     0.00        5     0.00     0.00  ExpressionStackPushLValue
+  0.00      0.01     0.00        5     0.00     0.00  HeapPopStackFrame
+  0.00      0.01     0.00        5     0.00     0.00  HeapPushStackFrame
+  0.00      0.01     0.00        5     0.00     0.00  StdioOutPutc
+  0.00      0.01     0.00        5     0.00     0.00  VariableAllocValueFromExistingData
+  0.00      0.01     0.00        5     0.00     0.00  VariableAllocValueShared
+  0.00      0.01     0.00        4     0.00     0.00  ExpressionCoerceUnsignedInteger
+  0.00      0.01     0.00        4     0.00     0.00  ExpressionParseFunctionCall
+  0.00      0.01     0.00        4     0.00     0.00  ExpressionStackPushValueByType
+  0.00      0.01     0.00        4     0.00     0.00  LexGetNumber
+  0.00      0.01     0.00        4     0.00     0.00  LexGetStringConstant
+  0.00      0.01     0.00        4     0.00     0.00  ParseDeclaration
+  0.00      0.01     0.00        4     0.00     0.00  StdioFprintfWord
+  0.00      0.01     0.00        4     0.00     0.00  TypeIsForwardDeclared
+  0.00      0.01     0.00        4     0.00     0.00  VariableDefineButIgnoreIdentical
+  0.00      0.01     0.00        4     0.00     0.00  VariableStringLiteralGet
+  0.00      0.01     0.00        4     0.00     0.00  VariableTableCleanup
+  0.00      0.01     0.00        3     0.00     0.00  ExpressionAssignToPointer
+  0.00      0.01     0.00        3     0.00     0.00  ParseDeclarationAssignment
+  0.00      0.01     0.00        3     0.00     0.00  PicocParse
+  0.00      0.01     0.00        3     0.00     0.00  StdioBasePrintf
+  0.00      0.01     0.00        3     0.00     0.00  StdioPrintf
+  0.00      0.01     0.00        3     0.00     0.00  VariableStringLiteralDefine
+  0.00      0.01     0.00        2     0.00     0.00  ParseBlock
+  0.00      0.01     0.00        2     0.00     0.00  ParseTypedef
+  0.00      0.01     0.00        2     0.00     0.00  TypeCreateOpaqueStruct
+  0.00      0.01     0.00        2     0.00     0.00  TypeParseStruct
+  0.00      0.01     0.00        2     0.00     0.00  VariableScopeBegin
+  0.00      0.01     0.00        2     0.00     0.00  VariableScopeEnd
+  0.00      0.01     0.00        1     0.00     0.00  BasicIOInit
+  0.00      0.01     0.00        1     0.00     0.00  DebugCleanup
+  0.00      0.01     0.00        1     0.00     0.00  DebugInit
+  0.00      0.01     0.00        1     0.00     0.00  ExpressionAssignInt
+  0.00      0.01     0.00        1     0.00     0.00  ExpressionInfixOperator
+  0.00      0.01     0.00        1     0.00     0.00  ExpressionPushInt
+  0.00      0.01     0.00        1     0.00     0.00  ExpressionStackPushOperator
+  0.00      0.01     0.00        1     0.00     0.00  HeapCleanup
+  0.00      0.01     0.00        1     0.00     0.00  HeapInit
+  0.00      0.01     0.00        1     0.00     0.00  IncludeCleanup
+  0.00      0.01     0.00        1     0.00     0.00  IncludeFile
+  0.00      0.01     0.00        1     0.00     0.00  IncludeInit
+  0.00      0.01     0.00        1     0.00     0.00  LexCleanup
+  0.00      0.01     0.00        1     0.00     0.00  LexCopyTokens
+  0.00      0.01     0.00        1     0.00     0.00  LexInit
+  0.00      0.01     0.00        1     0.00     0.00  LexInteractiveClear
+  0.00      0.01     0.00        1     0.00     0.00  LibraryAdd
+  0.00      0.01     0.00        1     0.00     0.00  LibraryInit
+  0.00      0.01     0.00        1     0.00     0.00  ParseCleanup
+  0.00      0.01     0.00        1     0.00     0.00  ParseStatementMaybeRun
+  0.00      0.01     0.00        1     0.00     0.00  PicocCallMain
+  0.00      0.01     0.00        1     0.00     0.00  PicocCleanup
+  0.00      0.01     0.00        1     0.00    10.00  PicocInitialise
+  0.00      0.01     0.00        1     0.00     0.00  PicocPlatformScanFile
+  0.00      0.01     0.00        1     0.00     0.00  PlatformCleanup
+  0.00      0.01     0.00        1     0.00     0.00  PlatformInit
+  0.00      0.01     0.00        1     0.00     0.00  PlatformLibraryInit
+  0.00      0.01     0.00        1     0.00     0.00  PlatformReadFile
+  0.00      0.01     0.00        1     0.00     0.00  StdioSetupFunc
+  0.00      0.01     0.00        1     0.00     0.00  TableStrFree
+  0.00      0.01     0.00        1     0.00     0.00  TypeCleanup
+  0.00      0.01     0.00        1     0.00     0.00  TypeCleanupNode
+  0.00      0.01     0.00        1     0.00     0.00  VariableCleanup
+  0.00      0.01     0.00        1     0.00     0.00  VariableInit
+  0.00      0.01     0.00        1     0.00     0.00  VariableStackFrameAdd
+  0.00      0.01     0.00        1     0.00     0.00  VariableStackFramePop
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 100.00% of 0.01 seconds
+
+index % time    self  children    called     name
+                0.00    0.01       1/1           main [3]
+[1]    100.0    0.00    0.01       1         PicocInitialise [1]
+                0.01    0.00       1/1           TypeInit [2]
+                0.00    0.00       1/1           PlatformInit [115]
+                0.00    0.00       1/1           BasicIOInit [91]
+                0.00    0.00       1/1           HeapInit [99]
+                0.00    0.00       1/330         TableInit [15]
+                0.00    0.00       1/1           VariableInit [123]
+                0.00    0.00       1/1           LexInit [105]
+                0.00    0.00       1/1           IncludeInit [102]
+                0.00    0.00       1/1           LibraryInit [108]
+                0.00    0.00       1/1           PlatformLibraryInit [116]
+                0.00    0.00       1/1           DebugInit [93]
+-----------------------------------------------
+                0.01    0.00       1/1           PicocInitialise [1]
+[2]    100.0    0.01    0.00       1         TypeInit [2]
+                0.00    0.00      14/14          TypeAddBaseType [49]
+                0.00    0.00       4/8           TypeAdd [55]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]    100.0    0.00    0.01                 main [3]
+                0.00    0.01       1/1           PicocInitialise [1]
+                0.00    0.00       1/1           PicocPlatformScanFile [113]
+                0.00    0.00       1/1           PicocCallMain [111]
+                0.00    0.00       1/1           PicocCleanup [112]
+-----------------------------------------------
+[4]      0.0    0.00    0.00       2+100     <cycle 1 as a whole> [4]
+                0.00    0.00      48             ParseFunctionDefinition <cycle 1> [39]
+                0.00    0.00      19             ParseStatement <cycle 1> [42]
+                0.00    0.00      16             ExpressionParse <cycle 1> [46]
+                0.00    0.00       4             ParseDeclaration <cycle 1> [73]
+                0.00    0.00       4             ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00       3             PicocParse <cycle 1> [81]
+                0.00    0.00       3             ParseDeclarationAssignment <cycle 1> [80]
+                0.00    0.00       2             ParseBlock <cycle 1> [85]
+                0.00    0.00       1             IncludeFile <cycle 1> [101]
+                0.00    0.00       1             LibraryAdd <cycle 1> [107]
+                0.00    0.00       1             ParseStatementMaybeRun <cycle 1> [110]
+-----------------------------------------------
+                0.00    0.00     580/1637        LexTokenise [37]
+                0.00    0.00    1057/1637        LexGetRawToken [7]
+[6]      0.0    0.00    0.00    1637         LexTokenSize [6]
+-----------------------------------------------
+                0.00    0.00    1057/1057        LexGetToken [8]
+[7]      0.0    0.00    0.00    1057         LexGetRawToken [7]
+                0.00    0.00    1057/1637        LexTokenSize [6]
+-----------------------------------------------
+                0.00    0.00       2/1057        ParseBlock <cycle 1> [85]
+                0.00    0.00       3/1057        ParseDeclarationAssignment <cycle 1> [80]
+                0.00    0.00       8/1057        TypeParseStruct [88]
+                0.00    0.00      12/1057        ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00      17/1057        ParseDeclaration <cycle 1> [73]
+                0.00    0.00      30/1057        ParseStatement <cycle 1> [42]
+                0.00    0.00      42/1057        ExpressionParse <cycle 1> [46]
+                0.00    0.00      54/1057        TypeParseBack [33]
+                0.00    0.00     141/1057        TypeParseFront [23]
+                0.00    0.00     213/1057        TypeParseIdentPart [22]
+                0.00    0.00     259/1057        ParseCountParams [38]
+                0.00    0.00     276/1057        ParseFunctionDefinition <cycle 1> [39]
+[8]      0.0    0.00    0.00    1057         LexGetToken [8]
+                0.00    0.00    1057/1057        LexGetRawToken [7]
+-----------------------------------------------
+                0.00    0.00       1/670         ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00       1/670         VariableStackFrameAdd [124]
+                0.00    0.00       1/670         VariableStackFramePop [125]
+                0.00    0.00      19/670         ParseStatement <cycle 1> [42]
+                0.00    0.00      49/670         ParseFunctionDefinition <cycle 1> [39]
+                0.00    0.00      49/670         ExpressionParse <cycle 1> [46]
+                0.00    0.00     108/670         TypeParseBack [33]
+                0.00    0.00     141/670         TypeParseFront [23]
+                0.00    0.00     301/670         TypeParseIdentPart [22]
+[9]      0.0    0.00    0.00     670         ParserCopy [9]
+-----------------------------------------------
+                0.00    0.00     580/580         LexTokenise [37]
+[10]     0.0    0.00    0.00     580         LexScanGetToken [10]
+                0.00    0.00     209/209         LexGetWord [21]
+                0.00    0.00       4/4           LexGetNumber [71]
+                0.00    0.00       4/4           LexGetStringConstant [72]
+-----------------------------------------------
+                0.00    0.00       1/401         TableInit [15]
+                0.00    0.00       1/401         LexInit [105]
+                0.00    0.00       1/401         VariableStackFrameAdd [124]
+                0.00    0.00       1/401         DebugInit [93]
+                0.00    0.00       2/401         TypeCreateOpaqueStruct [87]
+                0.00    0.00       2/401         VariableInit [123]
+                0.00    0.00     115/401         TableSet [26]
+                0.00    0.00     278/401         TableGet [18]
+[11]     0.0    0.00    0.00     401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       2/392         PicocParse <cycle 1> [81]
+                0.00    0.00       3/392         ParseCleanup [109]
+                0.00    0.00       9/392         IncludeCleanup [100]
+                0.00    0.00      10/392         TypeCleanupNode [121]
+                0.00    0.00      39/392         TableDelete [14]
+                0.00    0.00      47/392         LibraryAdd <cycle 1> [107]
+                0.00    0.00      76/392         VariableTableCleanup [78]
+                0.00    0.00      77/392         VariableFree [31]
+                0.00    0.00     129/392         TableStrFree [119]
+[12]     0.0    0.00    0.00     392         HeapFreeMem [12]
+-----------------------------------------------
+                0.00    0.00       1/391         PicocParse <cycle 1> [81]
+                0.00    0.00       9/391         IncludeRegister [53]
+                0.00    0.00      50/391         LexTokenise [37]
+                0.00    0.00     129/391         TableSetIdentifier [16]
+                0.00    0.00     202/391         VariableAlloc [19]
+[13]     0.0    0.00    0.00     391         HeapAllocMem [13]
+-----------------------------------------------
+                0.00    0.00      39/368         LexCleanup [103]
+                0.00    0.00     329/368         TableSetIdentifier [16]
+[14]     0.0    0.00    0.00     368         TableDelete [14]
+                0.00    0.00      39/392         HeapFreeMem [12]
+-----------------------------------------------
+                0.00    0.00       1/330         PicocInitialise [1]
+                0.00    0.00     329/330         TableSearchIdentifier [325]
+[15]     0.0    0.00    0.00     330         TableInit [15]
+                0.00    0.00       1/401         TableInitTable [11]
+                0.00    0.00       1/116         TableStrRegister [25]
+-----------------------------------------------
+                0.00    0.00     329/329         TableStrRegister2 [17]
+[16]     0.0    0.00    0.00     329         TableSetIdentifier [16]
+                0.00    0.00     329/368         TableDelete [14]
+                0.00    0.00     129/391         HeapAllocMem [13]
+-----------------------------------------------
+                0.00    0.00       4/329         LexGetStringConstant [72]
+                0.00    0.00     116/329         TableStrRegister [25]
+                0.00    0.00     209/329         LexGetWord [21]
+[17]     0.0    0.00    0.00     329         TableStrRegister2 [17]
+                0.00    0.00     329/329         TableSetIdentifier [16]
+-----------------------------------------------
+                0.00    0.00       1/278         ParseFunctionDefinition <cycle 1> [39]
+                0.00    0.00       4/278         VariableDefineButIgnoreIdentical [76]
+                0.00    0.00       4/278         VariableStringLiteralGet [77]
+                0.00    0.00       8/278         VariableDefined [56]
+                0.00    0.00      52/278         VariableGet [34]
+                0.00    0.00     209/278         LexCheckReservedWord [20]
+[18]     0.0    0.00    0.00     278         TableGet [18]
+                0.00    0.00     278/401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       1/240         LexCopyTokens [104]
+                0.00    0.00       1/240         ExpressionStackPushOperator [97]
+                0.00    0.00       2/240         TypeCreateOpaqueStruct [87]
+                0.00    0.00       5/240         VariableAllocValueFromExistingData [66]
+                0.00    0.00       8/240         TypeAdd [55]
+                0.00    0.00      17/240         ExpressionStackPushValueNode [45]
+                0.00    0.00      91/240         VariableAllocValueAndData [28]
+                0.00    0.00     115/240         TableSet [26]
+[19]     0.0    0.00    0.00     240         VariableAlloc [19]
+                0.00    0.00     202/391         HeapAllocMem [13]
+                0.00    0.00      38/97          HeapAllocStack [27]
+-----------------------------------------------
+                0.00    0.00     209/209         LexGetWord [21]
+[20]     0.0    0.00    0.00     209         LexCheckReservedWord [20]
+                0.00    0.00     209/278         TableGet [18]
+-----------------------------------------------
+                0.00    0.00     209/209         LexScanGetToken [10]
+[21]     0.0    0.00    0.00     209         LexGetWord [21]
+                0.00    0.00     209/329         TableStrRegister2 [17]
+                0.00    0.00     209/209         LexCheckReservedWord [20]
+-----------------------------------------------
+                0.00    0.00       5/142         ParseDeclaration <cycle 1> [73]
+                0.00    0.00     137/142         TypeParse [24]
+[22]     0.0    0.00    0.00     142         TypeParseIdentPart [22]
+                0.00    0.00     301/670         ParserCopy [9]
+                0.00    0.00     213/1057        LexGetToken [8]
+                0.00    0.00      71/76          TypeGetMatching [30]
+                0.00    0.00      54/54          TypeParseBack [33]
+-----------------------------------------------
+                0.00    0.00       4/141         ParseDeclaration <cycle 1> [73]
+                0.00    0.00     137/141         TypeParse [24]
+[23]     0.0    0.00    0.00     141         TypeParseFront [23]
+                0.00    0.00     141/670         ParserCopy [9]
+                0.00    0.00     141/1057        LexGetToken [8]
+                0.00    0.00      37/52          VariableGet [34]
+                0.00    0.00       2/2           TypeParseStruct [88]
+-----------------------------------------------
+                0.00    0.00       2/137         ParseTypedef [86]
+                0.00    0.00      47/137         LibraryAdd <cycle 1> [107]
+                0.00    0.00      88/137         ParseFunctionDefinition <cycle 1> [39]
+[24]     0.0    0.00    0.00     137         TypeParse [24]
+                0.00    0.00     137/141         TypeParseFront [23]
+                0.00    0.00     137/142         TypeParseIdentPart [22]
+-----------------------------------------------
+                0.00    0.00       1/116         TableInit [15]
+                0.00    0.00       1/116         LibraryInit [108]
+                0.00    0.00       1/116         LibraryAdd <cycle 1> [107]
+                0.00    0.00       2/116         PicocCallMain [111]
+                0.00    0.00       3/116         PicocParse <cycle 1> [81]
+                0.00    0.00       3/116         StdioSetupFunc [118]
+                0.00    0.00       9/116         IncludeRegister [53]
+                0.00    0.00      18/116         VariableDefinePlatformVar [43]
+                0.00    0.00      39/116         LexInit [105]
+                0.00    0.00      39/116         LexCleanup [103]
+[25]     0.0    0.00    0.00     116         TableStrRegister [25]
+                0.00    0.00     116/329         TableStrRegister2 [17]
+-----------------------------------------------
+                0.00    0.00       3/115         VariableStringLiteralDefine [84]
+                0.00    0.00       7/115         VariableDefine [58]
+                0.00    0.00      18/115         VariableDefinePlatformVar [43]
+                0.00    0.00      39/115         LexInit [105]
+                0.00    0.00      48/115         ParseFunctionDefinition <cycle 1> [39]
+[26]     0.0    0.00    0.00     115         TableSet [26]
+                0.00    0.00     115/401         TableInitTable [11]
+                0.00    0.00     115/240         VariableAlloc [19]
+-----------------------------------------------
+                0.00    0.00       1/97          VariableStackFrameAdd [124]
+                0.00    0.00       4/97          LexGetStringConstant [72]
+                0.00    0.00       4/97          ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00      38/97          VariableAlloc [19]
+                0.00    0.00      50/97          LexTokenise [37]
+[27]     0.0    0.00    0.00      97         HeapAllocStack [27]
+-----------------------------------------------
+                0.00    0.00       3/91          LexGetStringConstant [72]
+                0.00    0.00       9/91          VariableAllocValueAndCopy [54]
+                0.00    0.00      13/91          VariableAllocValueFromType [51]
+                0.00    0.00      18/91          VariableDefinePlatformVar [43]
+                0.00    0.00      48/91          ParseFunctionDefinition <cycle 1> [39]
+[28]     0.0    0.00    0.00      91         VariableAllocValueAndData [28]
+                0.00    0.00      91/240         VariableAlloc [19]
+-----------------------------------------------
+                0.00    0.00       3/83          ExpressionStackCollapse [44]
+                0.00    0.00       4/83          LexGetStringConstant [72]
+                0.00    0.00      11/83          VariableStackPop [52]
+                0.00    0.00      15/83          ExpressionParse <cycle 1> [46]
+                0.00    0.00      50/83          LexTokenise [37]
+[29]     0.0    0.00    0.00      83         HeapPopStack [29]
+-----------------------------------------------
+                0.00    0.00       1/76          StdioSetupFunc [118]
+                0.00    0.00       2/76          TypeParseStruct [88]
+                0.00    0.00       2/76          TypeCreateOpaqueStruct [87]
+                0.00    0.00      71/76          TypeParseIdentPart [22]
+[30]     0.0    0.00    0.00      76         TypeGetMatching [30]
+                0.00    0.00       4/8           TypeAdd [55]
+-----------------------------------------------
+                0.00    0.00      76/76          VariableTableCleanup [78]
+[31]     0.0    0.00    0.00      76         VariableFree [31]
+                0.00    0.00      77/392         HeapFreeMem [12]
+-----------------------------------------------
+                0.00    0.00       1/69          ExpressionInfixOperator [95]
+                0.00    0.00       1/69          ExpressionStackPushOperator [97]
+                0.00    0.00      32/69          ExpressionParse <cycle 1> [46]
+                0.00    0.00      35/69          ExpressionStackCollapse [44]
+[32]     0.0    0.00    0.00      69         debugf [32]
+-----------------------------------------------
+                0.00    0.00      54/54          TypeParseIdentPart [22]
+[33]     0.0    0.00    0.00      54         TypeParseBack [33]
+                0.00    0.00     108/670         ParserCopy [9]
+                0.00    0.00      54/1057        LexGetToken [8]
+-----------------------------------------------
+                0.00    0.00       1/52          PicocCallMain [111]
+                0.00    0.00       4/52          ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00       5/52          ParseStatement <cycle 1> [42]
+                0.00    0.00       5/52          ExpressionParse <cycle 1> [46]
+                0.00    0.00      37/52          TypeParseFront [23]
+[34]     0.0    0.00    0.00      52         VariableGet [34]
+                0.00    0.00      52/278         TableGet [18]
+-----------------------------------------------
+                0.00    0.00       3/50          PicocParse <cycle 1> [81]
+                0.00    0.00      47/50          LibraryAdd <cycle 1> [107]
+[35]     0.0    0.00    0.00      50         LexAnalyse [35]
+                0.00    0.00      50/50          LexTokenise [37]
+-----------------------------------------------
+                0.00    0.00       3/50          PicocParse <cycle 1> [81]
+                0.00    0.00      47/50          LibraryAdd <cycle 1> [107]
+[36]     0.0    0.00    0.00      50         LexInitParser [36]
+-----------------------------------------------
+                0.00    0.00      50/50          LexAnalyse [35]
+[37]     0.0    0.00    0.00      50         LexTokenise [37]
+                0.00    0.00     580/580         LexScanGetToken [10]
+                0.00    0.00     580/1637        LexTokenSize [6]
+                0.00    0.00      50/97          HeapAllocStack [27]
+                0.00    0.00      50/391         HeapAllocMem [13]
+                0.00    0.00      50/83          HeapPopStack [29]
+-----------------------------------------------
+                0.00    0.00      48/48          ParseFunctionDefinition <cycle 1> [39]
+[38]     0.0    0.00    0.00      48         ParseCountParams [38]
+                0.00    0.00     259/1057        LexGetToken [8]
+-----------------------------------------------
+                                   1             ParseDeclaration <cycle 1> [73]
+                                  47             LibraryAdd <cycle 1> [107]
+[39]     0.0    0.00    0.00      48         ParseFunctionDefinition <cycle 1> [39]
+                0.00    0.00     276/1057        LexGetToken [8]
+                0.00    0.00      88/137         TypeParse [24]
+                0.00    0.00      49/670         ParserCopy [9]
+                0.00    0.00      48/48          ParseCountParams [38]
+                0.00    0.00      48/91          VariableAllocValueAndData [28]
+                0.00    0.00      48/115         TableSet [26]
+                0.00    0.00       1/1           LexCopyTokens [104]
+                0.00    0.00       1/278         TableGet [18]
+                                   1             ParseStatementMaybeRun <cycle 1> [110]
+-----------------------------------------------
+                0.00    0.00       4/24          TypeStackSizeValue [60]
+                0.00    0.00       9/24          VariableAllocValueAndCopy [54]
+                0.00    0.00      11/24          VariableStackPop [52]
+[40]     0.0    0.00    0.00      24         TypeSizeValue [40]
+-----------------------------------------------
+                0.00    0.00      20/20          LexGetStringConstant [72]
+[41]     0.0    0.00    0.00      20         LexUnEscapeCharacter [41]
+-----------------------------------------------
+                                   1             ParseStatementMaybeRun <cycle 1> [110]
+                                   1             ExpressionParseFunctionCall <cycle 1> [69]
+                                   2             ParseBlock <cycle 1> [85]
+                                  15             PicocParse <cycle 1> [81]
+[42]     0.0    0.00    0.00      19         ParseStatement <cycle 1> [42]
+                0.00    0.00      30/1057        LexGetToken [8]
+                0.00    0.00      19/670         ParserCopy [9]
+                0.00    0.00      14/14          DebugCheckStatement [48]
+                0.00    0.00       5/8           VariableDefined [56]
+                0.00    0.00       5/52          VariableGet [34]
+                0.00    0.00       5/11          VariableStackPop [52]
+                0.00    0.00       2/2           ParseTypedef [86]
+                                   5             ExpressionParse <cycle 1> [46]
+                                   4             ParseDeclaration <cycle 1> [73]
+                                   2             ParseBlock <cycle 1> [85]
+                                   1             IncludeFile <cycle 1> [101]
+-----------------------------------------------
+                0.00    0.00       3/18          LibraryInit [108]
+                0.00    0.00      15/18          StdioSetupFunc [118]
+[43]     0.0    0.00    0.00      18         VariableDefinePlatformVar [43]
+                0.00    0.00      18/91          VariableAllocValueAndData [28]
+                0.00    0.00      18/116         TableStrRegister [25]
+                0.00    0.00      18/115         TableSet [26]
+-----------------------------------------------
+                0.00    0.00      17/17          ExpressionParse <cycle 1> [46]
+[44]     0.0    0.00    0.00      17         ExpressionStackCollapse [44]
+                0.00    0.00      35/69          debugf [32]
+                0.00    0.00       3/83          HeapPopStack [29]
+                0.00    0.00       2/6           TypeStackSizeValue [60]
+                0.00    0.00       1/1           ExpressionInfixOperator [95]
+-----------------------------------------------
+                0.00    0.00       1/17          ExpressionPushInt [96]
+                0.00    0.00       4/17          ExpressionStackPushValueByType [70]
+                0.00    0.00       5/17          ExpressionStackPushLValue [62]
+                0.00    0.00       7/17          ExpressionStackPushValue [57]
+[45]     0.0    0.00    0.00      17         ExpressionStackPushValueNode [45]
+                0.00    0.00      17/240         VariableAlloc [19]
+-----------------------------------------------
+                                   3             ParseDeclarationAssignment <cycle 1> [80]
+                                   5             ParseStatement <cycle 1> [42]
+                                   8             ExpressionParseFunctionCall <cycle 1> [69]
+[46]     0.0    0.00    0.00      16         ExpressionParse <cycle 1> [46]
+                0.00    0.00      49/670         ParserCopy [9]
+                0.00    0.00      42/1057        LexGetToken [8]
+                0.00    0.00      32/69          debugf [32]
+                0.00    0.00      17/17          ExpressionStackCollapse [44]
+                0.00    0.00      16/16          IsTypeToken [47]
+                0.00    0.00      15/83          HeapPopStack [29]
+                0.00    0.00       7/7           ExpressionStackPushValue [57]
+                0.00    0.00       5/52          VariableGet [34]
+                0.00    0.00       5/5           ExpressionStackPushLValue [62]
+                0.00    0.00       1/1           ExpressionStackPushOperator [97]
+                                   4             ExpressionParseFunctionCall <cycle 1> [69]
+-----------------------------------------------
+                0.00    0.00      16/16          ExpressionParse <cycle 1> [46]
+[47]     0.0    0.00    0.00      16         IsTypeToken [47]
+-----------------------------------------------
+                0.00    0.00      14/14          ParseStatement <cycle 1> [42]
+[48]     0.0    0.00    0.00      14         DebugCheckStatement [48]
+-----------------------------------------------
+                0.00    0.00      14/14          TypeInit [2]
+[49]     0.0    0.00    0.00      14         TypeAddBaseType [49]
+-----------------------------------------------
+                0.00    0.00      13/13          VariableAllocValueFromType [51]
+[50]     0.0    0.00    0.00      13         TypeSize [50]
+-----------------------------------------------
+                0.00    0.00       1/13          ExpressionPushInt [96]
+                0.00    0.00       3/13          ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00       4/13          ExpressionStackPushValueByType [70]
+                0.00    0.00       5/13          VariableDefine [58]
+[51]     0.0    0.00    0.00      13         VariableAllocValueFromType [51]
+                0.00    0.00      13/13          TypeSize [50]
+                0.00    0.00      13/91          VariableAllocValueAndData [28]
+-----------------------------------------------
+                0.00    0.00       3/11          ParseDeclarationAssignment <cycle 1> [80]
+                0.00    0.00       3/11          ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00       5/11          ParseStatement <cycle 1> [42]
+[52]     0.0    0.00    0.00      11         VariableStackPop [52]
+                0.00    0.00      11/24          TypeSizeValue [40]
+                0.00    0.00      11/83          HeapPopStack [29]
+-----------------------------------------------
+                0.00    0.00       1/9           PlatformLibraryInit [116]
+                0.00    0.00       8/9           IncludeInit [102]
+[53]     0.0    0.00    0.00       9         IncludeRegister [53]
+                0.00    0.00       9/391         HeapAllocMem [13]
+                0.00    0.00       9/116         TableStrRegister [25]
+-----------------------------------------------
+                0.00    0.00       2/9           VariableDefine [58]
+                0.00    0.00       7/9           ExpressionStackPushValue [57]
+[54]     0.0    0.00    0.00       9         VariableAllocValueAndCopy [54]
+                0.00    0.00       9/24          TypeSizeValue [40]
+                0.00    0.00       9/91          VariableAllocValueAndData [28]
+-----------------------------------------------
+                0.00    0.00       4/8           TypeGetMatching [30]
+                0.00    0.00       4/8           TypeInit [2]
+[55]     0.0    0.00    0.00       8         TypeAdd [55]
+                0.00    0.00       8/240         VariableAlloc [19]
+-----------------------------------------------
+                0.00    0.00       1/8           PicocCallMain [111]
+                0.00    0.00       1/8           IncludeFile <cycle 1> [101]
+                0.00    0.00       1/8           StdioSetupFunc [118]
+                0.00    0.00       5/8           ParseStatement <cycle 1> [42]
+[56]     0.0    0.00    0.00       8         VariableDefined [56]
+                0.00    0.00       8/278         TableGet [18]
+-----------------------------------------------
+                0.00    0.00       7/7           ExpressionParse <cycle 1> [46]
+[57]     0.0    0.00    0.00       7         ExpressionStackPushValue [57]
+                0.00    0.00       7/9           VariableAllocValueAndCopy [54]
+                0.00    0.00       7/17          ExpressionStackPushValueNode [45]
+-----------------------------------------------
+                0.00    0.00       1/7           IncludeFile <cycle 1> [101]
+                0.00    0.00       2/7           ParseTypedef [86]
+                0.00    0.00       4/7           VariableDefineButIgnoreIdentical [76]
+[58]     0.0    0.00    0.00       7         VariableDefine [58]
+                0.00    0.00       7/115         TableSet [26]
+                0.00    0.00       5/13          VariableAllocValueFromType [51]
+                0.00    0.00       2/9           VariableAllocValueAndCopy [54]
+-----------------------------------------------
+                0.00    0.00       3/6           ParseDeclarationAssignment <cycle 1> [80]
+                0.00    0.00       3/6           ExpressionParseFunctionCall <cycle 1> [69]
+[59]     0.0    0.00    0.00       6         ExpressionAssign [59]
+                0.00    0.00       3/5           ExpressionCoerceInteger [61]
+                0.00    0.00       3/3           ExpressionAssignToPointer [79]
+-----------------------------------------------
+                0.00    0.00       2/6           ExpressionStackCollapse [44]
+                0.00    0.00       4/6           StdioBasePrintf [82]
+[60]     0.0    0.00    0.00       6         TypeStackSizeValue [60]
+                0.00    0.00       4/24          TypeSizeValue [40]
+-----------------------------------------------
+                0.00    0.00       2/5           ExpressionInfixOperator [95]
+                0.00    0.00       3/5           ExpressionAssign [59]
+[61]     0.0    0.00    0.00       5         ExpressionCoerceInteger [61]
+-----------------------------------------------
+                0.00    0.00       5/5           ExpressionParse <cycle 1> [46]
+[62]     0.0    0.00    0.00       5         ExpressionStackPushLValue [62]
+                0.00    0.00       5/5           VariableAllocValueShared [67]
+                0.00    0.00       5/17          ExpressionStackPushValueNode [45]
+-----------------------------------------------
+                0.00    0.00       1/5           VariableStackFramePop [125]
+                0.00    0.00       4/5           ExpressionParseFunctionCall <cycle 1> [69]
+[63]     0.0    0.00    0.00       5         HeapPopStackFrame [63]
+-----------------------------------------------
+                0.00    0.00       1/5           VariableStackFrameAdd [124]
+                0.00    0.00       4/5           ExpressionParseFunctionCall <cycle 1> [69]
+[64]     0.0    0.00    0.00       5         HeapPushStackFrame [64]
+-----------------------------------------------
+                0.00    0.00       5/5           StdioBasePrintf [82]
+[65]     0.0    0.00    0.00       5         StdioOutPutc [65]
+-----------------------------------------------
+                0.00    0.00       5/5           VariableAllocValueShared [67]
+[66]     0.0    0.00    0.00       5         VariableAllocValueFromExistingData [66]
+                0.00    0.00       5/240         VariableAlloc [19]
+-----------------------------------------------
+                0.00    0.00       5/5           ExpressionStackPushLValue [62]
+[67]     0.0    0.00    0.00       5         VariableAllocValueShared [67]
+                0.00    0.00       5/5           VariableAllocValueFromExistingData [66]
+-----------------------------------------------
+                0.00    0.00       4/4           StdioBasePrintf [82]
+[68]     0.0    0.00    0.00       4         ExpressionCoerceUnsignedInteger [68]
+-----------------------------------------------
+                                   4             ExpressionParse <cycle 1> [46]
+[69]     0.0    0.00    0.00       4         ExpressionParseFunctionCall <cycle 1> [69]
+                0.00    0.00      12/1057        LexGetToken [8]
+                0.00    0.00       4/52          VariableGet [34]
+                0.00    0.00       4/4           ExpressionStackPushValueByType [70]
+                0.00    0.00       4/5           HeapPushStackFrame [64]
+                0.00    0.00       4/97          HeapAllocStack [27]
+                0.00    0.00       4/5           HeapPopStackFrame [63]
+                0.00    0.00       3/13          VariableAllocValueFromType [51]
+                0.00    0.00       3/6           ExpressionAssign [59]
+                0.00    0.00       3/11          VariableStackPop [52]
+                0.00    0.00       3/3           StdioPrintf [83]
+                0.00    0.00       1/670         ParserCopy [9]
+                0.00    0.00       1/1           VariableStackFrameAdd [124]
+                0.00    0.00       1/1           VariableStackFramePop [125]
+                                   8             ExpressionParse <cycle 1> [46]
+                                   1             ParseStatement <cycle 1> [42]
+-----------------------------------------------
+                0.00    0.00       4/4           ExpressionParseFunctionCall <cycle 1> [69]
+[70]     0.0    0.00    0.00       4         ExpressionStackPushValueByType [70]
+                0.00    0.00       4/13          VariableAllocValueFromType [51]
+                0.00    0.00       4/17          ExpressionStackPushValueNode [45]
+-----------------------------------------------
+                0.00    0.00       4/4           LexScanGetToken [10]
+[71]     0.0    0.00    0.00       4         LexGetNumber [71]
+-----------------------------------------------
+                0.00    0.00       4/4           LexScanGetToken [10]
+[72]     0.0    0.00    0.00       4         LexGetStringConstant [72]
+                0.00    0.00      20/20          LexUnEscapeCharacter [41]
+                0.00    0.00       4/97          HeapAllocStack [27]
+                0.00    0.00       4/329         TableStrRegister2 [17]
+                0.00    0.00       4/83          HeapPopStack [29]
+                0.00    0.00       4/4           VariableStringLiteralGet [77]
+                0.00    0.00       3/91          VariableAllocValueAndData [28]
+                0.00    0.00       3/3           VariableStringLiteralDefine [84]
+-----------------------------------------------
+                                   4             ParseStatement <cycle 1> [42]
+[73]     0.0    0.00    0.00       4         ParseDeclaration <cycle 1> [73]
+                0.00    0.00      17/1057        LexGetToken [8]
+                0.00    0.00       5/142         TypeParseIdentPart [22]
+                0.00    0.00       4/141         TypeParseFront [23]
+                0.00    0.00       4/4           VariableDefineButIgnoreIdentical [76]
+                                   3             ParseDeclarationAssignment <cycle 1> [80]
+                                   1             ParseFunctionDefinition <cycle 1> [39]
+-----------------------------------------------
+                0.00    0.00       4/4           StdioBasePrintf [82]
+[74]     0.0    0.00    0.00       4         StdioFprintfWord [74]
+-----------------------------------------------
+                0.00    0.00       4/4           VariableDefineButIgnoreIdentical [76]
+[75]     0.0    0.00    0.00       4         TypeIsForwardDeclared [75]
+-----------------------------------------------
+                0.00    0.00       4/4           ParseDeclaration <cycle 1> [73]
+[76]     0.0    0.00    0.00       4         VariableDefineButIgnoreIdentical [76]
+                0.00    0.00       4/4           TypeIsForwardDeclared [75]
+                0.00    0.00       4/278         TableGet [18]
+                0.00    0.00       4/7           VariableDefine [58]
+-----------------------------------------------
+                0.00    0.00       4/4           LexGetStringConstant [72]
+[77]     0.0    0.00    0.00       4         VariableStringLiteralGet [77]
+                0.00    0.00       4/278         TableGet [18]
+-----------------------------------------------
+                0.00    0.00       2/4           TypeCleanupNode [121]
+                0.00    0.00       2/4           VariableCleanup [122]
+[78]     0.0    0.00    0.00       4         VariableTableCleanup [78]
+                0.00    0.00      76/76          VariableFree [31]
+                0.00    0.00      76/392         HeapFreeMem [12]
+-----------------------------------------------
+                0.00    0.00       3/3           ExpressionAssign [59]
+[79]     0.0    0.00    0.00       3         ExpressionAssignToPointer [79]
+-----------------------------------------------
+                                   3             ParseDeclaration <cycle 1> [73]
+[80]     0.0    0.00    0.00       3         ParseDeclarationAssignment <cycle 1> [80]
+                0.00    0.00       3/1057        LexGetToken [8]
+                0.00    0.00       3/6           ExpressionAssign [59]
+                0.00    0.00       3/11          VariableStackPop [52]
+                                   3             ExpressionParse <cycle 1> [46]
+-----------------------------------------------
+                                   1             IncludeFile <cycle 1> [101]
+                0.00    0.00       1/2           PicocCallMain [111]
+                0.00    0.00       1/2           PicocPlatformScanFile [113]
+[81]     0.0    0.00    0.00       3         PicocParse <cycle 1> [81]
+                0.00    0.00       3/116         TableStrRegister [25]
+                0.00    0.00       3/50          LexAnalyse [35]
+                0.00    0.00       3/50          LexInitParser [36]
+                0.00    0.00       2/392         HeapFreeMem [12]
+                0.00    0.00       1/391         HeapAllocMem [13]
+                                  15             ParseStatement <cycle 1> [42]
+-----------------------------------------------
+                0.00    0.00       3/3           StdioPrintf [83]
+[82]     0.0    0.00    0.00       3         StdioBasePrintf [82]
+                0.00    0.00       5/5           StdioOutPutc [65]
+                0.00    0.00       4/6           TypeStackSizeValue [60]
+                0.00    0.00       4/4           ExpressionCoerceUnsignedInteger [68]
+                0.00    0.00       4/4           StdioFprintfWord [74]
+-----------------------------------------------
+                0.00    0.00       3/3           ExpressionParseFunctionCall <cycle 1> [69]
+[83]     0.0    0.00    0.00       3         StdioPrintf [83]
+                0.00    0.00       3/3           StdioBasePrintf [82]
+-----------------------------------------------
+                0.00    0.00       3/3           LexGetStringConstant [72]
+[84]     0.0    0.00    0.00       3         VariableStringLiteralDefine [84]
+                0.00    0.00       3/115         TableSet [26]
+-----------------------------------------------
+                                   2             ParseStatement <cycle 1> [42]
+[85]     0.0    0.00    0.00       2         ParseBlock <cycle 1> [85]
+                0.00    0.00       2/2           VariableScopeBegin [89]
+                0.00    0.00       2/1057        LexGetToken [8]
+                0.00    0.00       2/2           VariableScopeEnd [90]
+                                   2             ParseStatement <cycle 1> [42]
+-----------------------------------------------
+                0.00    0.00       2/2           ParseStatement <cycle 1> [42]
+[86]     0.0    0.00    0.00       2         ParseTypedef [86]
+                0.00    0.00       2/137         TypeParse [24]
+                0.00    0.00       2/7           VariableDefine [58]
+-----------------------------------------------
+                0.00    0.00       2/2           StdioSetupFunc [118]
+[87]     0.0    0.00    0.00       2         TypeCreateOpaqueStruct [87]
+                0.00    0.00       2/76          TypeGetMatching [30]
+                0.00    0.00       2/240         VariableAlloc [19]
+                0.00    0.00       2/401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       2/2           TypeParseFront [23]
+[88]     0.0    0.00    0.00       2         TypeParseStruct [88]
+                0.00    0.00       8/1057        LexGetToken [8]
+                0.00    0.00       2/76          TypeGetMatching [30]
+-----------------------------------------------
+                0.00    0.00       2/2           ParseBlock <cycle 1> [85]
+[89]     0.0    0.00    0.00       2         VariableScopeBegin [89]
+-----------------------------------------------
+                0.00    0.00       2/2           ParseBlock <cycle 1> [85]
+[90]     0.0    0.00    0.00       2         VariableScopeEnd [90]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[91]     0.0    0.00    0.00       1         BasicIOInit [91]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[92]     0.0    0.00    0.00       1         DebugCleanup [92]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[93]     0.0    0.00    0.00       1         DebugInit [93]
+                0.00    0.00       1/401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       1/1           ExpressionInfixOperator [95]
+[94]     0.0    0.00    0.00       1         ExpressionAssignInt [94]
+-----------------------------------------------
+                0.00    0.00       1/1           ExpressionStackCollapse [44]
+[95]     0.0    0.00    0.00       1         ExpressionInfixOperator [95]
+                0.00    0.00       2/5           ExpressionCoerceInteger [61]
+                0.00    0.00       1/69          debugf [32]
+                0.00    0.00       1/1           ExpressionAssignInt [94]
+                0.00    0.00       1/1           ExpressionPushInt [96]
+-----------------------------------------------
+                0.00    0.00       1/1           ExpressionInfixOperator [95]
+[96]     0.0    0.00    0.00       1         ExpressionPushInt [96]
+                0.00    0.00       1/13          VariableAllocValueFromType [51]
+                0.00    0.00       1/17          ExpressionStackPushValueNode [45]
+-----------------------------------------------
+                0.00    0.00       1/1           ExpressionParse <cycle 1> [46]
+[97]     0.0    0.00    0.00       1         ExpressionStackPushOperator [97]
+                0.00    0.00       1/240         VariableAlloc [19]
+                0.00    0.00       1/69          debugf [32]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[98]     0.0    0.00    0.00       1         HeapCleanup [98]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[99]     0.0    0.00    0.00       1         HeapInit [99]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[100]    0.0    0.00    0.00       1         IncludeCleanup [100]
+                0.00    0.00       9/392         HeapFreeMem [12]
+-----------------------------------------------
+                                   1             ParseStatement <cycle 1> [42]
+[101]    0.0    0.00    0.00       1         IncludeFile <cycle 1> [101]
+                0.00    0.00       1/8           VariableDefined [56]
+                0.00    0.00       1/7           VariableDefine [58]
+                0.00    0.00       1/1           StdioSetupFunc [118]
+                                   1             PicocParse <cycle 1> [81]
+                                   1             LibraryAdd <cycle 1> [107]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[102]    0.0    0.00    0.00       1         IncludeInit [102]
+                0.00    0.00       8/9           IncludeRegister [53]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[103]    0.0    0.00    0.00       1         LexCleanup [103]
+                0.00    0.00      39/116         TableStrRegister [25]
+                0.00    0.00      39/368         TableDelete [14]
+                0.00    0.00       1/1           LexInteractiveClear [106]
+-----------------------------------------------
+                0.00    0.00       1/1           ParseFunctionDefinition <cycle 1> [39]
+[104]    0.0    0.00    0.00       1         LexCopyTokens [104]
+                0.00    0.00       1/240         VariableAlloc [19]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[105]    0.0    0.00    0.00       1         LexInit [105]
+                0.00    0.00      39/116         TableStrRegister [25]
+                0.00    0.00      39/115         TableSet [26]
+                0.00    0.00       1/401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       1/1           LexCleanup [103]
+[106]    0.0    0.00    0.00       1         LexInteractiveClear [106]
+-----------------------------------------------
+                                   1             IncludeFile <cycle 1> [101]
+[107]    0.0    0.00    0.00       1         LibraryAdd <cycle 1> [107]
+                0.00    0.00      47/50          LexAnalyse [35]
+                0.00    0.00      47/50          LexInitParser [36]
+                0.00    0.00      47/137         TypeParse [24]
+                0.00    0.00      47/392         HeapFreeMem [12]
+                0.00    0.00       1/116         TableStrRegister [25]
+                                  47             ParseFunctionDefinition <cycle 1> [39]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[108]    0.0    0.00    0.00       1         LibraryInit [108]
+                0.00    0.00       3/18          VariableDefinePlatformVar [43]
+                0.00    0.00       1/116         TableStrRegister [25]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[109]    0.0    0.00    0.00       1         ParseCleanup [109]
+                0.00    0.00       3/392         HeapFreeMem [12]
+-----------------------------------------------
+                                   1             ParseFunctionDefinition <cycle 1> [39]
+[110]    0.0    0.00    0.00       1         ParseStatementMaybeRun <cycle 1> [110]
+                                   1             ParseStatement <cycle 1> [42]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[111]    0.0    0.00    0.00       1         PicocCallMain [111]
+                0.00    0.00       2/116         TableStrRegister [25]
+                0.00    0.00       1/8           VariableDefined [56]
+                0.00    0.00       1/52          VariableGet [34]
+                0.00    0.00       1/2           PicocParse <cycle 1> [81]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[112]    0.0    0.00    0.00       1         PicocCleanup [112]
+                0.00    0.00       1/1           DebugCleanup [92]
+                0.00    0.00       1/1           IncludeCleanup [100]
+                0.00    0.00       1/1           ParseCleanup [109]
+                0.00    0.00       1/1           LexCleanup [103]
+                0.00    0.00       1/1           VariableCleanup [122]
+                0.00    0.00       1/1           TypeCleanup [120]
+                0.00    0.00       1/1           TableStrFree [119]
+                0.00    0.00       1/1           HeapCleanup [98]
+                0.00    0.00       1/1           PlatformCleanup [114]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[113]    0.0    0.00    0.00       1         PicocPlatformScanFile [113]
+                0.00    0.00       1/1           PlatformReadFile [117]
+                0.00    0.00       1/2           PicocParse <cycle 1> [81]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[114]    0.0    0.00    0.00       1         PlatformCleanup [114]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[115]    0.0    0.00    0.00       1         PlatformInit [115]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[116]    0.0    0.00    0.00       1         PlatformLibraryInit [116]
+                0.00    0.00       1/9           IncludeRegister [53]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocPlatformScanFile [113]
+[117]    0.0    0.00    0.00       1         PlatformReadFile [117]
+-----------------------------------------------
+                0.00    0.00       1/1           IncludeFile <cycle 1> [101]
+[118]    0.0    0.00    0.00       1         StdioSetupFunc [118]
+                0.00    0.00      15/18          VariableDefinePlatformVar [43]
+                0.00    0.00       3/116         TableStrRegister [25]
+                0.00    0.00       2/2           TypeCreateOpaqueStruct [87]
+                0.00    0.00       1/76          TypeGetMatching [30]
+                0.00    0.00       1/8           VariableDefined [56]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[119]    0.0    0.00    0.00       1         TableStrFree [119]
+                0.00    0.00     129/392         HeapFreeMem [12]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[120]    0.0    0.00    0.00       1         TypeCleanup [120]
+                0.00    0.00       1/1           TypeCleanupNode [121]
+-----------------------------------------------
+                                  22             TypeCleanupNode [121]
+                0.00    0.00       1/1           TypeCleanup [120]
+[121]    0.0    0.00    0.00       1+22      TypeCleanupNode [121]
+                0.00    0.00      10/392         HeapFreeMem [12]
+                0.00    0.00       2/4           VariableTableCleanup [78]
+                                  22             TypeCleanupNode [121]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocCleanup [112]
+[122]    0.0    0.00    0.00       1         VariableCleanup [122]
+                0.00    0.00       2/4           VariableTableCleanup [78]
+-----------------------------------------------
+                0.00    0.00       1/1           PicocInitialise [1]
+[123]    0.0    0.00    0.00       1         VariableInit [123]
+                0.00    0.00       2/401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       1/1           ExpressionParseFunctionCall <cycle 1> [69]
+[124]    0.0    0.00    0.00       1         VariableStackFrameAdd [124]
+                0.00    0.00       1/5           HeapPushStackFrame [64]
+                0.00    0.00       1/97          HeapAllocStack [27]
+                0.00    0.00       1/670         ParserCopy [9]
+                0.00    0.00       1/401         TableInitTable [11]
+-----------------------------------------------
+                0.00    0.00       1/1           ExpressionParseFunctionCall <cycle 1> [69]
+[125]    0.0    0.00    0.00       1         VariableStackFramePop [125]
+                0.00    0.00       1/670         ParserCopy [9]
+                0.00    0.00       1/5           HeapPopStackFrame [63]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [91] BasicIOInit           [105] LexInit                [17] TableStrRegister2
+  [48] DebugCheckStatement    [36] LexInitParser          [55] TypeAdd
+  [92] DebugCleanup          [106] LexInteractiveClear    [49] TypeAddBaseType
+  [93] DebugInit              [10] LexScanGetToken       [120] TypeCleanup
+  [59] ExpressionAssign        [6] LexTokenSize          [121] TypeCleanupNode
+  [94] ExpressionAssignInt    [37] LexTokenise            [87] TypeCreateOpaqueStruct
+  [79] ExpressionAssignToPointer [41] LexUnEscapeCharacter [30] TypeGetMatching
+  [61] ExpressionCoerceInteger [107] LibraryAdd            [2] TypeInit
+  [68] ExpressionCoerceUnsignedInteger [108] LibraryInit  [75] TypeIsForwardDeclared
+  [95] ExpressionInfixOperator [85] ParseBlock            [24] TypeParse
+  [46] ExpressionParse       [109] ParseCleanup           [33] TypeParseBack
+  [69] ExpressionParseFunctionCall [38] ParseCountParams  [23] TypeParseFront
+  [96] ExpressionPushInt      [73] ParseDeclaration       [22] TypeParseIdentPart
+  [44] ExpressionStackCollapse [80] ParseDeclarationAssignment [88] TypeParseStruct
+  [62] ExpressionStackPushLValue [39] ParseFunctionDefinition [50] TypeSize
+  [97] ExpressionStackPushOperator [42] ParseStatement    [40] TypeSizeValue
+  [57] ExpressionStackPushValue [110] ParseStatementMaybeRun [60] TypeStackSizeValue
+  [70] ExpressionStackPushValueByType [86] ParseTypedef   [19] VariableAlloc
+  [45] ExpressionStackPushValueNode [9] ParserCopy        [54] VariableAllocValueAndCopy
+  [13] HeapAllocMem          [111] PicocCallMain          [28] VariableAllocValueAndData
+  [27] HeapAllocStack        [112] PicocCleanup           [66] VariableAllocValueFromExistingData
+  [98] HeapCleanup             [1] PicocInitialise        [51] VariableAllocValueFromType
+  [12] HeapFreeMem            [81] PicocParse             [67] VariableAllocValueShared
+  [99] HeapInit              [113] PicocPlatformScanFile [122] VariableCleanup
+  [29] HeapPopStack          [114] PlatformCleanup        [58] VariableDefine
+  [63] HeapPopStackFrame     [115] PlatformInit           [76] VariableDefineButIgnoreIdentical
+  [64] HeapPushStackFrame    [116] PlatformLibraryInit    [43] VariableDefinePlatformVar
+ [100] IncludeCleanup        [117] PlatformReadFile       [56] VariableDefined
+ [101] IncludeFile            [82] StdioBasePrintf        [31] VariableFree
+ [102] IncludeInit            [74] StdioFprintfWord       [34] VariableGet
+  [53] IncludeRegister        [65] StdioOutPutc          [123] VariableInit
+  [47] IsTypeToken            [83] StdioPrintf            [89] VariableScopeBegin
+  [35] LexAnalyse            [118] StdioSetupFunc         [90] VariableScopeEnd
+  [20] LexCheckReservedWord   [14] TableDelete           [124] VariableStackFrameAdd
+ [103] LexCleanup             [18] TableGet              [125] VariableStackFramePop
+ [104] LexCopyTokens          [15] TableInit              [52] VariableStackPop
+  [71] LexGetNumber           [11] TableInitTable         [84] VariableStringLiteralDefine
+   [7] LexGetRawToken         [26] TableSet               [77] VariableStringLiteralGet
+  [72] LexGetStringConstant   [16] TableSetIdentifier     [78] VariableTableCleanup
+   [8] LexGetToken           [119] TableStrFree           [32] debugf
+  [21] LexGetWord             [25] TableStrRegister        [4] <cycle 1>

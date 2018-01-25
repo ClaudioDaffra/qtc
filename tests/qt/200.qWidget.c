@@ -59,6 +59,8 @@ int main()
 		if ( qWidgetEventCheck ( qKey , qWindow , w0 ) ) 
 		{ 
 			printf ( "\nKey qWindow w0 key: %d specialKey: %d\n", qWindowGetKey(w0) ,qWindowGetSpecialKey(w0) );
+			if ( qWindowGetKey(w0)== ) printf ( "hai premuto la lettera 'a'\n");
+			if ( qWindowGetSpecialKey(w0)==qKey_Ctrl ) printf ( "hai premuto il tasto special Control \n");			
 		}
 
 	}
