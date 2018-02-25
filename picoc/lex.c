@@ -87,7 +87,8 @@ static struct ReservedWord ReservedWords[] =
     { "qWidget", TokenVoidType },		
     { "integer", TokenLongType },
 	{ "real", TokenDoubleType },
-    { "stringc", TokenCharType }	
+    { "stringc", TokenCharType },
+    { "qPointer", TokenVoidType },
 };
 
 

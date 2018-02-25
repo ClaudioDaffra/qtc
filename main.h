@@ -31,7 +31,7 @@
 /**/
 
 #define QTC_VER (char*)"\n-------\nQTC 0.1\n-------\n"
-#define QTC_AUTHORS (const char*)"\n2009-2011, Zik Saleeba \n2015, Joseph Poirier \n2017, Mike Meyer \n2018, Claudio Daffra"
+#define QTC_AUTHORS (const char*)"\n2009, Zik Saleeba \n2015, Joseph Poirier \n2017, Mike Meyer \n2018, Claudio Daffra"
 #define QTC_EMAIL	(const char*)"\ndaffra.claudio@gmail.com"
 #define QTC_LICENSE (const char*)" MIT "
 
