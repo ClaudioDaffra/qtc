@@ -1,5 +1,5 @@
 
-# qtc v 0.0
+# qtc v 0.1
  
 
 qtc is a little interpreter based on picoc   
